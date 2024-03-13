@@ -1,19 +1,18 @@
 ---
-
 copyright:
   years: 2023
 lastupdated: "2023-12-26"
 
-subcollection: pattern-sap-on-vpc
+subcollection: pattern-zerto-dr-vc
 
 keywords:
-
 ---
-
 {{site.data.keyword.attribute-definition-list}}
 
 <!-- exapmles of format are below -->
+
 # References
+
 {: #references}
 
 [IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
