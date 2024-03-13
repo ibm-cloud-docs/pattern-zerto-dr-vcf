@@ -1,5 +1,4 @@
 ---
-
 copyright:
   years: 2023
 lastupdated: "2023-11-28"
@@ -12,31 +11,33 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Overview
-{: #overview}
+# Deploy IBM Cloud Resiliency Design with Zerto on VMware
 
-<!-- Note to author>    THIS SHOULD BE ABOUT 10 – 15 LINES AND FOLLOW….
-The objective of this pattern is to provide a solution design for……. -->
+## Overview
 
-This pattern is intended to:
-* Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the IBM Architecture Framework.
-* Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection to meet enterprise requirements.
-* Ensure requirements can be met from a performance, system availability and security perspective.
+This pattern describes a Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads where both the protected and recovery sites are hosted in IBM Cloud Virtual Private Cloud (VPC).
 
-<!-- Add any clarifications of what is in scope/out of scope, make sure you address these points in the doc) -->
+**While the provisioning of the VCF in IBM Cloud VPC is automated, the installation and configuration of Zerto is a manual process and a custom installation on IBM Cloud.**
 
-<!-- Note to author> THIS SHOULD IDEALLY TAKE UP THE REST OF THE PAGE AND FOLLOW
- ABC pattern allows customers to……(what is the compelling reason to use this pattern?)
-The IBM …….consists of …(compelling reason to use IBM Cloud, i.e. specific IBM cloud offering)
-Use the following text for reference to Architecture Framework aspects and domains. -->
+This pattern is cross-region, meaning that the recovery site is in a different IBMN Cloud region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
 
-Following the Architecture Framework, the `<Pattern Name>` covers design considerations and architecture decisions for the following aspects and domains:
-<!-- Note to author> <List the aspects and domains covered in this pattern; Here is an example:-->
-- Compute: Virtual Servers
-- Storage: Primary Storage, Backup Storage
-- Networking: Enterprise Connectivity, Segmentation and Isolation, Cloud Native Connectivity, Load Balancing, DNS
-- Security: Data Security, Identity and Access Management, Application Security, Infrastructure and Endpoint Security
-- Resiliency: High Availability, Backup and Restore
-- Service Management: Monitoring, Logging, Auditing, Alerting
+**This pattern does not cover backup design and deployment.**{: note}
 
-The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework).
+Check to ensure that the minimum distance between the protected and recovery sites meets your requirement. {: important}
+
+The decision tree, shown below, is a selection criteria for selecting Zerto as the disaster recover product.
+
+![Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree](image/Zerto-tree.svg)
+
+Figure 1. Disaster recovery decision tree for VMware on IBM Cloud
+
+Following the Architecture Framework, the `<pattern-zerto-dr-vcf>` covers design considerations and architecture decisions for the following aspects and domains:
+
+-   Compute: Virtual Servers
+-   Storage: Primary Storage, Backup Storage
+-   Networking: Enterprise Connectivity, Segmentation and Isolation, Cloud Native Connectivity, Load Balancing, DNS
+-   Security: Data Security, Identity and Access Management, Application Security, Infrastructure and Endpoint Security
+-   Resiliency: High Availability, Backup and Restore
+-   Service Management: Monitoring, Logging, Auditing, Alerting
+
+The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Introduction to the Architecture Framework](file:////docs/architecture-framework).

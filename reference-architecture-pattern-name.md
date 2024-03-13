@@ -22,162 +22,114 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: https://cloud.ibm.com/docs/pattern-sap-on-powervs
+docs: https://cloud.ibm.com/docs/pattern-zerto-dr-vcf
 
 content-type: reference-architecture
 ---
-<!--
-The following line inserts all the attribute definitions. Don't delete.
--->
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!--
-Don't include "reference architecture" in the following title.
-Specify a title based on a use case. If the architecture has a module
-or tile in the IBM Cloud catalog, match the title to the catalog. See
-https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
--->
+# Reference architecture: Deploy IBM Cloud resiliency design with Zerto on IBM Cloud VMware
 
-# SAP on VPC `<!-- H1 -->`
+This pattern describes Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads where both the protected and recovery sites are in IBM Cloud VPC. The deployment of the Zerto solution will need to be done manually, however, Zerto licenses can be ordered through VMware Solutions portal.
 
-{: #sap-on-vpc}
-{: toc-content-type="reference-architecture"}
-{: toc-version="1.0"}
+-   Disaster recovery is a shared responsibility of the Client and supported by IBM/Partner for building and supported day 2 services. If you do not use IBM/Partner for building and supported day 2 services, then you are totaly responsible for disaster recovery.
+-   If the workload to be protected must support data encryption, GPDR and other regulated compliance please refer to [Deploy IBM Cloud Resiliency Design with Veeam on VMware](need link).
+-   This pattern is cross-region, meaning that the recovery site is in a different IBMN Cloud region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
 
-<!--
-The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
-the toc attributes on the H1, repeating the values from the YAML header.
- -->
+Check to ensure that the minimum distance between the protected and recovery sites meets your requirement. {: important}
 
-<!-->:information_source: **Tip:** For more information about this template, see [Creating reference architectures](https://test.cloud.ibm.com/docs/writing?topic=writing-reference-architectures).-->
+This pattern builds on Zerto best-practice guidance, see [Zerto KB](https://help.zerto.com/category/Best_Practices).
 
-Include a short description, summary, or overview in a single paragraph that follows the title.
+VCF in IBM Cloud VPC can be deployed as one of two architectures; standard and consolidated. This pattern is based on the consolidated architecture but includes additional considerations for the standard architecture.{: note}
 
-After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
+## Zerto Architecture diagram
 
-Architecture diagram `<!-- this is an H2 -->`
+The following diagram describes the high-level steps to deploy Zerto on a VMware Cloud Foundation deployed with the consolidated architecture. In this pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs). This architecture pattern deployment is summarized as follows:
 
-{: #architecture-diagram}
+1.  Create a bare metal server VLAN interface into management subnet for Zerto ZVM. This step provides an IP address from the management subnet for use for the Zerto ZVM. Attach to equivalent management security groups. Add required DNS A and PTR records to the DNS service according to the Zerto documentation and your solution requirements.
+2.  Deploy Zerto ZVM appliance and attach it to the management DPG by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
+3.  Create the required number of bare metal server VLAN interfaces with reserved IP addresses by using consecutive IP range into management subnet for Zerto VRAs. Attach to equivalent management security groups in Virtual Private Cloud (VPC).
+4.  Configure Zerto ZVM with the IP address range and using the workflow in ZVM, deploy the VRAs.
 
-<!--Include the architecture diagram SVG file that was created by using drawio and the IBM2 library.
+![img](image/Zerto-Architecture-Disaster-recovery.svg)
 
-![Enter image alt text here.](example-architecture-diagram.svg "Title text that shows on hover here"){: caption="Figure 1. A description that prints on the page" caption-side="bottom"}
+Figure 2. Zerto Disaster Recovery for VMWare Solution Components
 
-If you have a list or text to describe the diagram, include it here.you may have more than one diagram -->
+For the reference architecture described below we assume you have already deployed a consolidated VCF deployment in two Regions.
 
-Figure 1 illustrates...overview text here
+The key features of this pattern are as follows:
 
-![A diagram of a computer network Description automatically
-generated](./image1.png)
+-   **IBM Cloud Infrastructure:**
+    -   Two VMware Cloud Foundation environments hosted on IBM Cloud. Region 1 hosts the protected environment, and Region 2 hosts the recovery environment. Potentially the recovery region can also host development and test workloads that can be “sacrificed” when a disaster recovery is invoked or tested.
+    -   Multiple ESXi bare metal servers forming a cluster hosting your virtual machines.
+-   **Zerto Virtual Manager (ZVM):**
+    -   Manages everything required for the replication between the protection and recovery sites, except for the actual replication of data.
+    -   Running as a dedicated linux appliance and requires access to the Internet for licenceing.
+    -   Interacts with the vCenter Server Appliance to get the inventory of VMs, disks, networks, hosts, etc.
+    -   Monitors changes in the hypervisor environment and responds accordingly.
+    -   Installed with embedded SQL Server (localdb) as the database unless sizing and performance indicate otherwise.
+-   **Zerto Virtual Replication Appliance (VRA):**
+    -   Manages the replication of data from protected virtual machines to the recovery site.
+    -   Linux-based virtual machine installed on every hypervisor that hosts virtual machines that require protecting in the protected site and on every hypervisor that will host the replicated virtual machines in the recovery site, this is essential that VRA are hosted across **protected and recovery site for VM replication.**
+    -   Compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
+    -   Zerto recommends installing a VRA on every host so that if protected virtual machines are moved from one host in the cluster to another host in the cluster there is always a VRA to protect the moved virtual machines.
+-   **Virtual Backup Appliance (VBA):**
+    -   Manages File Level Recovery operations within Zerto Virtual Replication.
+    -   Windows service running on the ZVM.
+    -   Repositories can be local or on a shared network.
+-   **Data Streaming Service (DSS):**
+    -   Service running on the VRA, responsible for all the retention data path operations.
+-   **User interface:**
+    -   Recovery using the Zerto solution is managed in a browser or, in VMware vSphere Web Client or Client console.
 
-Figure 1 `<!-- this is the diagram caption -->`
+## Design Scope
 
-Figure 1 detailed description goes here
+Consider the following when reviewing the pattern:
 
-Figure 2 illustrates ....overview text here.
+-   Network connectivity from on-premises to the IBM Cloud environments is considered as out of scope for this pattern.
+-   Zerto will not impact the operation of your VMs. This is because Zerto captures change data while it is still in the memory of the ESX host on its way to a datastore. The only time this is not the case is during the initial sync or a delta sync.
+-   For more information on the Zerto components see the following:
+    -   [Technical_Specifications](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-addingzertodr).
+    -   [Zerto_Scale_and_Benchmarking_Guidelines](https://help.zerto.com/bundle/Scale.Bench.Guide.HTML/page/Zerto_Scale_and_Benchmarking_Guide_R.htm).
 
-![A diagram of a computer network Description automatically
-generated](./image2.png)
+## IBM Architecture Framework
 
-Figure 2
+Following the IBM Architecture Framework, the VMware VCF in IBM Cloud VPC disaster recovery solution using Zerto covers design considerations and architecture decisions for the following aspects and domains:
 
-figure 2 detailed diagram description here
+-   Compute: Virtual Servers.
+-   Storage: Primary Storage, Backup.
+-   Networking: Public Connectivity, Segmentation and Isolation, DNS.
+-   Security: Data Security, Identity and Access Management.
+-   Resiliency: High Availability, Disaster Recovery.
+-   Service Management: Monitoring, Logging, Auditing, Alerting.
 
-Design scope `<!-- H2 -->`
+![img](image/heat-map-Zerto.svg) Figure 2 Architecture framework for Zerto deployment on VMware on IBM Cloud
 
-{: #design-scope}
+The IBM Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Architecture framework](https://test.cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)
 
-Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), SAP on VPC covers design considerations and architecture decisions for the following aspects and domains:
+### Requirements
 
-<!-- include all aspectsand domains relavant to the pattern below -->
+| **Aspect**         | **Requirement**                                                                                                                                                                                                                |
+|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Compute            | CPU and RAM to support Zerto components                                                                                                                                                                                        |
+| Storage            | Storage to support Zerto components and to replicate the protected virtual machines                                                                                                                                            |
+| Resiliency         | Replicate VMware workloads from a protected site to a recovery site in a different region for failover of workloads in the event of failure in the protected site. Failover that meets the required RTO/RPO of the application |
+| Service Management | Monitor the usage and performance of the Zerto components. Enable logging and alerting to DevOps tooling                                                                                                                       |
 
-- **Compute:** Bare Metal and Virtual infrastructure
-- **Storage:** Primary, Backup, Archive and Migration
-- **Networking:** Enterprise Connectivity, Edge Gateways, Segmentation and Isolation, Cloud Native Connectivity and Load Balancing
-- **Security:** Data, Identity and Access Management, Infrastructure and Endpoint, Threat Detection and Response
-- **Resiliency:** Backup and Restore, Disaster Recovery, High Availability
-- **Service Management:** Monitoring, Logging, Alerting, Management/Orchestration
+Table 1. Zerto Disaster Recovery solution requirements for VMware Workloads on IBM Cloud VMware Foundation on VPC
 
-The Architecture Framework, described in [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+### Components
 
-The Figure 3 shows the domains that are covered in this solution.
+| **Aspect**             | **Component**                                 | **How the component is used**                                                                                                                                                                                                                                                                |
+|------------------------|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data                   | Embeded localdb installed with ZVM            | Used as the Zerto Replication configuration database. Alternatively, an external SQL Server instance could be used. To use an externally managed database, select the Custom Installation option during the installation.                                                                    |
+| Compute                | Virtual Machine                               | Compute for ZVM and VRAs                                                                                                                                                                                                                                                                     |
+| Storage                | vSAN                                          | Storage for ZVM and VRAs                                                                                                                                                                                                                                                                     |
+| Networking             | Enterprise Connectivity                       | Connectivity to on-premises locations (**considered as out of scope for this pattern**)                                                                                                                                                                                                      |
+|                        | IBM Cloud Backbone                            | The IBM Cloud private network is used to replicate traffic between the regions. Control traffic between the ZVM and the data-plane VRA components also traverses this network.                                                                                                               |
+|                        | Internet                                      | Internet access to connect to Zerto CallHome Server, Zerto Analytics. and Zerto support.                                                                                                                                                                                                     |
+| **Resiliency**         | Zerto                                         | Zerto provides the resiliency of the VMware virtual machines to be protected and recovered. The resiliency of the Zerto data-plane components is accomplished by deploying multiple VRAs. For the ZVM, vSphere HA and backups of the database enables resiliency of the Zerto control-plane. |
+| **Service Management** | **Optional** - Zerto Analytics, Cloud Control | Zerto Analytics and Cloud Control provide visibility into Zerto-protected workloads and provide monitoring, reporting, alerting, diagnostics with automated resolutions and infrastructure utilization and capacity planning.                                                                |
 
-<!-- use the draw.io framework template to create your heatmap image, located here https://ibm.ent.box.com/file/1389368500379 -->
-
-![A diagram of a computer network Description automatically
-generated](./image3.png)
-
-Figure 3
-
-Requirements `<!-- H2 -->`
-
-{: #requirements}
-
-<!-- insert the requirements table, below is an example -->
-
-The following represents a baseline set of requirements which we believe are applicable to most clients and critical to successful SAP deployment.
-
-| Aspect                                                                                                    | Requirement                                                                                                                                                                                                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Network                                                                                                   | Enterprise connectivity to customer data center(s) to provide access to applications from on-prem                                                                                                                                                                                                                                 |
-|                                                                                                           | Map and convert existing customer SAP Network functionality into IBM Cloud and VPC networking services                                                                                                                                                                                                                            |
-|                                                                                                           | Migrate/Redeploy customer IP addressing scheme within the IBM Cloud environment                                                                                                                                                                                                                                                   |
-|                                                                                                           | Provide network isolation with the ability to segregate applications based on attributes such as data classification, public vs internal apps and function                                                                                                                                                                        |
-| Security                                                                                                  | Provide data encryption in transit and at rest                                                                                                                                                                                                                                                                                    |
-|                                                                                                           | Migrate customer IDS/IAM Services to target IBM Cloud environment                                                                                                                                                                                                                                                                 |
-|                                                                                                           | Retain the same firewall rulesets across existing DCs                                                                                                                                                                                                                                                                             |
-|                                                                                                           | Firewalls must be restrictively configured to provide advanced security features and prevent all traffic, both inbound and outbound, except that which is specifically required, documented, and approved, and include IPS/IDS services                                                                                           |
-| Resiliency                                                                                                | Multi-site capability to support a disaster recovery strategy and solution leveraging IBM Cloud infrastructure DR capabilities                                                                                                                                                                                                    |
-|                                                                                                           | Provide backups for data retention                                                                                                                                                                                                                                                                                                |
-|                                                                                                           | RTO/RPO = 4 hours/15 minutes; Rollback to original environments should occur no later than specified RTOs                                                                                                                                                                                                                         |
-|                                                                                                           | 99.95 Availability                                                                                                                                                                                                                                                                                                                |
-|                                                                                                           | Backups                                                                                                                                                                                                                                                                                                                           |
-|                                                                                                           | - Prod: Daily Full, logs per SAP product standard, 30 days retention time \n - Non-Prod: Weekly full, logs per SAP product standard, 14 days retention time                                                                                                                                                                       |
-| Service Management                                                                                        | Provide Health and System Monitoring with ability to monitor and correlate performance metrics and events and provide alerting across applications and infrastructure                                                                                                                                                             |
-|                                                                                                           | Ability to diagnose issues and exceptions and identify error sources                                                                                                                                                                                                                                                              |
-|                                                                                                           | Automate management processes to keep applications and infrastructure secure, up to date, and available                                                                                                                                                                                                                           |
-| Other                                                                                                     | Migrate SAP workloads from existing data center to IBM Cloud VPC                                                                                                                                                                                                                                                                  |
-|                                                                                                           | Customer's SAP systems and applications run on NetWeaver (application) & HANA (DB), AnyDB or S/4 HANA                                                                                                                                                                                                                             |
-|                                                                                                           | Provide an Image Replication migration solution that will minimize disruption during cut-over                                                                                                                                                                                                                                     |
-|                                                                                                           | Cloud infrastructure for the proposed IAAS solution must be SAP Certified                                                                                                                                                                                                                                                         |
-|                                                                                                           | IBM Cloud IaaS will be deployed to support SAP and surrounding non-SAP workloads                                                                                                                                                                                                                                                  |
-|                                                                                                           | Customer does not want to adopt[RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) at this time but wants to consider Cloud deployment solution that would facilitate a future RISE transformation |
-| {: caption="Table 1. Requirements" caption-side="bottom"}  <!-- each table MUST have a caption attribute> |                                                                                                                                                                                                                                                                                                                                   |
-
-Components `<!-- H2 -->`
-
-{: #components}
-
-<!-- insert the components list, below is an example -->
-
-| Aspect                                                                                                 | Component                                                                                                                                                                                                                                                                                                                                                                                                            | How the component is used                                                                |
-| ------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Compute                                                                                                | [VPC VSIs](https://cloud.ibm.com/vpc-ext/provision/vs)                                                                                                                                                                                                                                                                                                                                                                  | NetWeaver and HANA DB                                                                    |
-| Storage                                                                                                | [VPC Block Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-block)                                                                                                                                                                                                                                                                                                                                     | NetWeaver and HANA DB servers primary storage. Backup storage                            |
-|                                                                                                        | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage)                                                                                                                                                                                                                                                                                           | Backup and archive, application logs, operational logs and audit logs                    |
-| Networking                                                                                             | [VPC Virtual Private Network (VPN)](https://cloud.ibm.com/docs/iaas-vpn?topic=iaas-vpn-getting-started)                                                                                                                                                                                                                                                                                                                 | Remote access to manage resources in private network                                     |
-|                                                                                                        | [Virtual Private Gateway &amp; Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe)                                                                                                                                                                                                                                                                                                      | For private network access to Cloud Services, e.g. Key Protect, COS, etc.                |
-|                                                                                                        | [VPC Load Balancers](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers)                                                                                                                                                                                                                                                                                                                                           | Application Load Balancing for web servers, app servers, and database servers            |
-|                                                                                                        | Public Gateway                                                                                                                                                                                                                                                                                                                                                                                                       | For web server access to the internet                                                    |
-|                                                                                                        | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                                                                                                                                                                                                                               | Public Load balancing and DDoS of web servers traffic across zones in the region         |
-|                                                                                                        | [DNS Services](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                                                                                                                                                                                                                                                                                                                   |                                                                                          |
-|                                                                                                        | [VPCs and subnets](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc&interface=ui)                                                                                                                                                                                                                                                                                                                             | Network Segmentation/Isolation                                                           |
-|                                                                                                        | [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-about)                                                                                                                                                                                                                                                                                                                               | Connect across multiple VPCs                                                             |
-|                                                                                                        | [IBM Cloud Application Load Balancer](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about) (ALB) \n SAP Web Dispatcher                                                                                                                                                                                                                                                                                        | Load balancing workloads across multiple workload instances over the private network     |
-| Security                                                                                               | [Block Storage encryption](https://cloud.ibm.com/docs/vpc?topic=vpc-mng-data&interface=ui) with provider keys                                                                                                                                                                                                                                                                                                           | Block Storage Encryption at rest                                                         |
-|                                                                                                        | Cloud Object Storage Encryption                                                                                                                                                                                                                                                                                                                                                                                      | Cloud Object Storage Encryption at rest                                                  |
-|                                                                                                        | HANA Data Volume Encryption (DVE)                                                                                                                                                                                                                                                                                                                                                                                    | HANA Database Encryption at rest                                                         |
-|                                                                                                        | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess)                                                                                                                                                                                                                                                                                                                                                     | IBM Cloud Identity & Access Management                                                   |
-|                                                                                                        | Privileged Identity and Access Management                                                                                                                                                                                                                                                                                                                                                                            | BYO Bastion host (or Privileged Access Gateway) with PAM SW deployed in Edge VPC         |
-|                                                                                                        | [BYO Bastion Host on VPC VSI with PAM SW](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport)                                                                                                                                                                                                                           | Remote access with Privileged Access Management                                          |
-|                                                                                                        | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)                                                                                                                                                                                                                                                                                               | Core Network Protection                                                                  |
-|                                                                                                        | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                                                                                                                                                                                                                               | DDoS protection and Web App Firewall                                                     |
-|                                                                                                        | One of the following: \n -[Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Juniper vSRX](https://cloud.ibm.com/catalog/content/juniper-vsrx-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global) \n -[Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global) | - IPS/IDS protection at all ingress/egress \n- Unified Threat Management (UTM) Firewall  |
-| Resiliency                                                                                             | HANA System Replication (HSR)                                                                                                                                                                                                                                                                                                                                                                                        | Provide 99.95% availability for HANA DB                                                  |
-|                                                                                                        | [Veeam](https://cloud.ibm.com/docs/vpc?topic=vpc-about-veeam)                                                                                                                                                                                                                                                                                                                                                           | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
-| Service Management (Observability)                                                                     | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                                                                                                                                                                                                                            | Apps and operational monitoring                                                          |
-|                                                                                                        | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                                                                                                                                                                                                                                          | Apps and operational logs                                                                |
-| {: caption="Table 2. Components" caption-side="bottom"} <!-- each table MUST have a caption attribute> |                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                          |
-
-As mentioned earlier, the Architecture Framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations, and architecture decisions for the aspects and domains that are in play in this solution pattern.
+Table 2. Zerto Disaster Recovery solution components for VMware Workloads on IBM Cloud VMware Cloud Foundations on VPC
