@@ -1,2 +1,2 @@
-# pattern-zerto-dr-vcf
-Documentation repository for pattern-zerto-dr-vcf
+# pattern templates
+Accelerator patterns template files
