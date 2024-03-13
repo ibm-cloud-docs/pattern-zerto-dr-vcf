@@ -4,16 +4,16 @@
 ---
 toc:
   properties:
-    subcollection: <pattern-zerto-dr-vcf>
-    industry: industry-value
-    use-case: use-case-value
-    compliance: compliance-value
+    subcollection: pattern-zerto-dr-vc
+    # industry: industry-value
+    use-case: Public cloud
+   # compliance: compliance-value
     audience: solution
     content-type: deployment
-    href: /docs/<pattern-zerto-dr-vcf->
-    path: <pattern-zerto-dr-vcf>
-    description: Pattern description
-    label: Pattern name
+    href: /docs/pattern-zerto-dr-vc
+    path: pattern-zerto-dr-vc
+    description: Disaster Recovery on IBM Cloud with Zerto
+    label: Deploy IBM Cloud resiliency design with Zerto on VMware
 
   entries:
   - navgroup:
@@ -42,9 +42,9 @@ toc:
             navtitle: Security
           - topic: resiliency-design.md
             navtitle: Resiliency
+
           - topic: service-management-design.md
-            navtitle: Service management
-          - other-design.md
+            navtitle: Service Management
       - topicgroup:
           label: Architecture decisions
           topics:
@@ -57,10 +57,9 @@ toc:
           - topic: security-architecture.md
             navtitle: Security
           - topic: resiliency-architecture.md
-            navtitle: Resiliency
+            navtitle: Resiliency         
           - topic: service-management-architecture.md
-            navtitle: Service management
-          - other-architecture.md
+            navtitle: Service Management 
 
   - navgroup:
       id: deploy
