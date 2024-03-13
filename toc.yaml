@@ -11,7 +11,7 @@ toc:
     audience: solution
     content-type: deployment
     href: /docs/pattern-zerto-dr-vcf
-    path: /docs/pattern-zerto-dr-vcf
+    path: pattern-zerto-dr-vcf
     description: Disaster Recovery on IBM Cloud with Zerto
     label: Deploy IBM Cloud resiliency design with Zerto on VMware
 
