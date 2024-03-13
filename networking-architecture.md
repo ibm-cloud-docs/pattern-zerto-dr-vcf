@@ -3,7 +3,7 @@ copyright:
   years: 2023
 lastupdated: "2023-12-18"
 
-subcollection: pattern-zerto-dr-vc
+subcollection: pattern-zerto-dr-vcf
 
 keywords:
 ---

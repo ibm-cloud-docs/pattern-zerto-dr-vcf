@@ -4,14 +4,14 @@
 ---
 toc:
   properties:
-    subcollection: pattern-zerto-dr-vc
+    subcollection: pattern-zerto-dr-vcf
     # industry: industry-value
     use-case: Public cloud
    # compliance: compliance-value
     audience: solution
     content-type: deployment
-    href: /docs/pattern-zerto-dr-vc
-    path: pattern-zerto-dr-vc
+    href: /docs/pattern-zerto-dr-vcf
+    path: /docs/pattern-zerto-dr-vcf
     description: Disaster Recovery on IBM Cloud with Zerto
     label: Deploy IBM Cloud resiliency design with Zerto on VMware
 

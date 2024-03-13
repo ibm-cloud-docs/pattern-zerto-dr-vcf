@@ -7,7 +7,7 @@ keywords: # Not typically populated
 
 subcollection: # Use the subcollection value from your toc.yaml file. e.g. pattern-sap-on-vpc
 
-subcollection: pattern-zerto-dr-vc
+subcollection: pattern-zerto-dr-vcf
 
 keywords:
 # The release that the reference architecture describes
