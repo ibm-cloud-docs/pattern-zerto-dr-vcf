@@ -1,30 +1,10 @@
 ---
 copyright:
-years: 2023
-lastupdated: "2023-12-26"
-
-keywords: # Not typically populated
-
-subcollection: # Use the subcollection value from your toc.yaml file. e.g. pattern-sap-on-vpc
+  years: 2023
+lastupdated: "2024-02-24"
 
 subcollection: pattern-zerto-dr-vcf
-
 keywords:
-# The release that the reference architecture describes
-
-authors:
-- name: Doug Eppard
-
-version: 1.0
-
-# Use if the reference architecture has deployable code.
-# Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
-deployment-url:
-
-docs: https://cloud.ibm.com/docs/pattern-zerto-dr-vcf
-
-content-type: reference-architecture
 ---
 {{site.data.keyword.attribute-definition-list}}
 
