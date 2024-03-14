@@ -10,12 +10,12 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Storage design
-
-{: \#storage-design}
+{: #storage-design}
 
 This section expands on the storage aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the storage aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
@@ -23,6 +23,7 @@ The requirements for the storage aspect for the Zerto for disaster recovery for 
 - Storage to support replicas (VM replicas)
 
 ## Journal
+{: #journal}
 
 Zerto uses a journal to track the changes occuring on the protected VMs. The Zerto Journal is where replication data is stored during ongoing replication between sites. This allows for recovery points in case of failure or rollback to previous points in time. Zerto recommends:
 
@@ -35,6 +36,7 @@ Zerto uses a journal to track the changes occuring on the protected VMs. The Zer
 - Regularly testing recovery is recommended to validate sufficient journal storage is provisioned based on actual workload requirements.
 
 ## Journal Sizing
+{: #journal sizing}
 
 To calculate the journal size, you can use the following formula:
 
@@ -49,6 +51,7 @@ So you would need at least 264GB of free storage space on the target site to acc
 See [Journal_Overview__Sizing_and_Best_Practice](https://help.zerto.com/bundle/BP.Journal.Sizing.HTML/page/Journal_Overview__Sizing_and_Best_Practice.htm)
 
 ## Considerations
+{: #considerations}
 
 - The ZVMs and VRAs are deployed in the VCF environment, so they will use storage from the provisioned datastore, which in the case of VCF is vSAN based.
 - For replication, an important consideration, especially given that vSAN is being used for the VMware VCF on IBM Cloud datastores, is to properly size the recovery site VMware deployment datastores so that they can accommodate the replicas (as scaling a vSAN cluster involves adding additional bare metal ESXis to the cluster).

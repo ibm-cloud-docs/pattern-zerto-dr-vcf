@@ -10,18 +10,19 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Security design
-
-{: \#security-design}
+{: #security-design}
 
 This section expands on the security aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the security aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
 - Provide encryption or privacy for the replication between the IBM Cloud regions.
 
 ## Considerations
+{: #considerations}
 
 | Security Areas                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,5 +32,4 @@ The requirements for the security aspect for the Zerto for disaster recovery for
 | **Vulnerability Management**   | **Regular Updates:** Keep Zerto software and underlying systems up-to-date with the latest security patches and updates to address potential vulnerabilities. **Scanning and Testing:** Regularly perform vulnerability assessments and penetration testing on the Zerto infrastructure to identify and remediate security weaknesses.                                                                                                                                                                                                                                                                                                                                                                                      |
 | **Compliance**                 | **Regulatory Compliance:** Ensure that the Zerto deployment within the IBM Cloud adheres to relevant industry regulations and compliance standards, such as GDPR, HIPAA, or any other applicable requirements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | **Data Residency and Privacy** | **Data Residency Policies:** Understand and comply with data residency requirements by configuring Zerto to align with IBM Cloud's data residency policies. **Privacy Considerations:** Address privacy concerns by implementing anonymization or pseudonymization of sensitive data within backups.                                                                                                                                                                                                                                                                                                                                                                                                                        |
-
-Table 1. Security design considerations
+{: caption="Table 1. Security design considerations" caption-side="bottom"}

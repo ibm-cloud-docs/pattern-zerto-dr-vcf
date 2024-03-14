@@ -10,6 +10,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Overview
+{: #overview}
 
 This pattern describes a Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads where both the protected and recovery sites are hosted in IBM Cloud Virtual Private Cloud (VPC).
 
@@ -23,7 +24,7 @@ Check to ensure that the minimum distance between the protected and recovery sit
 
 The decision tree, shown below, is a selection criteria for selecting Zerto as the disaster recover product.
 
-![Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree](image/Zerto-tree.svg)
+![Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree](image/Zerto-tree.svg){: caption="Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree" caption-side="bottom"}
 
 Figure 1. Disaster recovery decision tree for VMware on IBM Cloud
 

@@ -8,12 +8,12 @@ subcollection: pattern-zerto-dr-vcf
 keywords:
 ---
 # Service management design consideration
-
-{: \#service}
+{: #service}
 
 This section expands on the service management aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
@@ -23,6 +23,7 @@ The requirements for the compute aspect for the Zerto for disaster recovery for 
 Monitoring a Zerto Replication environment is crucial to ensure the health, performance, and reliability of the replication processes. Here are some guidance and best practices for monitoring a Zerto replication environment.
 
 ## Considerations
+{: #considerations}
 
 Some key considerations for service management are listed below.
 

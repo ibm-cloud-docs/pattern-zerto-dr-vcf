@@ -10,12 +10,12 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Compute design
-
-{: \#compute-design}
+{: #compute-design}
 
 This section expands on the compute aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
@@ -25,16 +25,17 @@ The requirements for the compute aspect for the Zerto for disaster recovery for 
 Zerto Architecture Components:
 
 - **ZVM:**
-  - A Linux based virtual appliance, one per site.
-  - Uses a local embedded SQL Server by default, it is recommended to use an external Microsoft SQL Server for medium sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
-  - For sizing see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
+   - A Linux based virtual appliance, one per site.
+   - Uses a local embedded SQL Server by default, it is recommended to use an external Microsoft SQL Server for medium sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
+   - For sizing see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
 - **VRA:**
-  - A Linux based virtual machine installed on every hypervisor that hosts virtual machines that require protecting in the **protected** site and on every hypervisor that will host the replicated virtual machines in the **recovery site**. Install a VRA on every hypervisor host so that if protected virtual machines are moved from one host in the cluster to another host in the cluster there is always a VRA to protect the moved virtual machines.
-  - A VRA compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
-  - A VRA can manage a maximum of 1500 volumes, whether these volumes are being protected or recovered.
-  - For sizing, see [Requirements for Virtual Replication Appliances](https://help.zerto.com/bundle/Prereq.VC.HTML.90/page/Requirements_for_Virtual_Replication_Appliances.htm).
+   - A Linux based virtual machine installed on every hypervisor that hosts virtual machines that require protecting in the **protected** site and on every hypervisor that will host the replicated virtual machines in the **recovery site**. Install a VRA on every hypervisor host so that if protected virtual machines are moved from one host in the cluster to another host in the cluster there is always a VRA to protect the moved virtual machines.
+   - A VRA compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
+   - A VRA can manage a maximum of 1500 volumes, whether these volumes are being protected or recovered.
+   - For sizing, see [Requirements for Virtual Replication Appliances](https://help.zerto.com/bundle/Prereq.VC.HTML.90/page/Requirements_for_Virtual_Replication_Appliances.htm).
 
 ## Deployment Options
+{: #deploymentoptions}
 
 There are two deployment options for VMware Cloud Foundation on IBM Cloud VPC. These deployment options will determine where the zerto components need to be deployed.
 
@@ -42,10 +43,11 @@ There are two deployment options for VMware Cloud Foundation on IBM Cloud VPC. T
 2. **Consolidated Architecture:** Consolidated domain where both the VCF Management and Workload domains reside.
 
 ### Standard architecture deployment on VCF
+{: #vcfdeployment}
 
 The following diagram introduces the high-level steps to deploy Zerto on a VMware Cloud Foundation standard architecture. In this architecture pattern, the Zerto ZVM appliance is deployed into the management domain as virtual machines (VMs) and Zerto VRAs are deployed in the VI workload domain.
 
-![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg)
+![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg){: caption="Zerto_VCF_IBM_Cloud_Standard_Architecture" caption-side="bottom"}
 
 Figure 1. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC standard architecture
 
@@ -57,10 +59,11 @@ This architecture pattern deployment is summarized as follows:
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
 ### Consolidated architecture deployment on VCF
+{: #architecture}
 
 The following diagram introduces the high-level steps to deploy Zerto on a VMware Cloud Foundation consolidated architecture. In this architecture pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs).
 
-![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg)
+![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg){: caption="Zerto_VCF_IBM_Cloud_Consolidated_Architecture" caption-side="bottom"}
 
 Figure 2. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC consolidated architecture
 
@@ -72,6 +75,7 @@ This architecture pattern deployment is summarized as follows:
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
 ### Disaster recovery site compute sizing
+{: #sizing}
 
 The disaster recovery environment needs to always have enough bare metals ESXi hosts provisioned in the recovery location to be able to bring up the replicas of the protected workloads when a disaster renders the production VMware environment unavailable.
 
