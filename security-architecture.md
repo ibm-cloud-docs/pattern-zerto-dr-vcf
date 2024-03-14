@@ -11,7 +11,7 @@ keywords:
 
 # Security design
 
-{: \#security-architecture}
+{: #security-architecture}
 
 The following sections summarize the security architecture decisions for workloads deployed on {{site.data.keyword.cloud_notm}} VCF for Zerto.
 
