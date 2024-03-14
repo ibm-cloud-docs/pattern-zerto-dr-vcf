@@ -33,7 +33,7 @@ The following diagram describes the high-level steps to deploy Zerto on a VMware
 
 ![img](image/Zerto-Architecture-Disaster-recovery.svg)
 
-Figure 2. Zerto Disaster Recovery for VMWare Solution Components
+Figure 1. Zerto Disaster Recovery for VMWare Solution Components
 
 For the reference architecture described below we assume you have already deployed a consolidated VCF deployment in two Regions.
 
