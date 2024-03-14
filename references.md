@@ -7,20 +7,12 @@ subcollection: pattern-zerto-dr-vcf
 
 keywords:
 ---
-{{site.data.keyword.attribute-definition-list}}
 
-<!-- exapmles of format are below -->
+{{site.data.keyword.attribute-definition-list}}
 
 # References
 
-{: #references}
+{: \#references}
 
-[IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
-
-[IBM Cloud for SAP Get Started](https://cloud.ibm.com/docs/sap?topic=sap-get-started)
-
-[Veeam Plug-ins for Enterprise Applications](https://helpcenter.veeam.com/docs/backup/plugins/overview.html?ver=120)
-
-[Sizing process for SAP Systems](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui)
-
-[FAQ -- SAP on IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-ibm-cloud-for-sap)
+-   [Zerto Product Documentation](https://help.zerto.com/)
+-   [Zerto KB](https://help.zerto.com/category/Best_Practices)
