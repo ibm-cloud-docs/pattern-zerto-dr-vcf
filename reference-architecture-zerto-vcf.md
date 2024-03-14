@@ -13,9 +13,9 @@ keywords:
 
 This pattern describes Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads where both the protected and recovery sites are in {{site.data.keyword.vpc_short}}. The deployment of the Zerto solution needs to be done manually. Zerto licenses can be ordered through VMware Solutions portal.
 
-- Disaster recovery is a shared responsibility of the Client and supported by IBM or Business Partner for building and supported day 2 services. If you do not use IBM/Partner for building and supported Day 2 services, then you are responsible for disaster recovery.
+- Disaster recovery is a shared responsibility of the Client and supported by IBM or Business Partner for build and day 2 support services. If you do not use IBM or Business Partner for build and Day 2 support services, then you are responsible for disaster recovery.
 - If the workload to be protected must support data encryption, GPDR and other regulated compliance refer to [Deploy {{site.data.keyword.cloud_notm}} Resiliency Design with Veeam on VMware](https://cloud.ibm.com/docs/vmware-cross-region-dr?topic=vmware-cross-region-dr-overview).
-- This pattern is cross-region, meaning that the recovery site is in a different {{site.data.keyword.cloud_notm}} region than the protected location, for example protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required, for example Frankfurt AZ1 and Frankfurt AZ3.
+- This pattern is cross-region, meaning that the recovery site is in a different {{site.data.keyword.cloud_notm}} region than the protected location, for example protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone, for example Frankfurt AZ1 and Frankfurt AZ3.
 
 Check to ensure that the minimum distance between the protected and recovery sites meets your requirement. {: important}
 
@@ -26,7 +26,7 @@ VCF in {{site.data.keyword.vpc_short}} can be deployed as one of two architectur
 ## Zerto Architecture diagram
 {: #resiliency-architecture}
 
-The following diagram describes the high-level steps to deploy Zerto on a VMware Cloud Foundation deployed with the consolidated architecture. In this pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs). This architecture pattern deployment is summarized as follows:
+The following diagram describes the high-level steps to deploy Zerto on a VMware Cloud Foundation deployed with the consolidated architecture. In this pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs). The following summarizes the deployment architecture pattern:
 
 1. Create a bare metal server VLAN interface into management subnet for Zerto ZVM. This step provides an IP address from the management subnet for use for the Zerto ZVM. Attach to equivalent management security groups. Add required DNS A and PTR records to the DNS service according to the Zerto documentation and your solution requirements.
 2. Deploy a Zerto ZVM appliance and attach it to the management DPG by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
@@ -39,14 +39,14 @@ Figure 1. Zerto Disaster Recovery for VMWare Solution Components
 
 In the following reference architecture, a consolidated VCF deployment in two regions is assumed.
 
-The key features of this pattern are as follows:
+Key features of this pattern are:
 
 - **{{site.data.keyword.cloud_notm}} Infrastructure:**
    - Two VMware Cloud Foundation environments hosted on {{site.data.keyword.cloud_notm}}. Region 1 hosts the protected environment, and Region 2 hosts the recovery environment. Potentially the recovery region can also host development and test workloads that can be “sacrificed” when a disaster recovery is invoked or tested.
    - Multiple ESXi bare metal servers form a cluster hosting your virtual machines.
 - **Zerto Virtual Manager (ZVM):**
    - Manages everything that is required for the replication between the protection and recovery sites, except for  the actual replication of data.
-   - Running as a dedicated linux appliance and requires access to the Internet for licenceing.
+   - Runs as a dedicated linux appliance and requires access to the Internet for licenceing.
    - Interacts with the vCenter Server Appliance to get the inventory of VMs, disks, networks, hosts, etc.
    - Monitors changes in the hypervisor environment and responds.
    -  Unless sizing and performance considerations suggest otherwise, the application will be installed with embedded SQL Server (localdb) as the database, providing a robust and efficient data storage solution.

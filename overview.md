@@ -37,4 +37,4 @@ Following the Architecture Framework, the `pattern-zerto-dr-vcf` covers design c
 - Resiliency: High Availability, Backup, and Restore
 - Service Management: Monitoring, Logging, Auditing, Alerting
 
- The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework). The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains."
+ The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework).
