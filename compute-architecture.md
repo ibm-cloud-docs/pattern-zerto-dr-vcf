@@ -11,7 +11,7 @@ keywords:
 
 # Architecture decisions for compute
 
-{: \#compute-decisions}
+{: #compute-decisions}
 
 ## Compute Architecture decision
 
