@@ -10,12 +10,12 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Network design
-
-{: \#network-design}
+{: #network-design}
 
 This section expands on the network aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the network aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
@@ -34,11 +34,12 @@ When you design or deploy this architecture pattern, consider the following:
 - Ensure that the IBM Cloud VPC security groups and firewall rules allow the replication and control traffic.
 - Ensure that the networks are properly routed and possible firewall rules allow the required traffic at both source and destination sites.
 - Performance:
-  - Amount of initial data initialized or synchronized in a VPG.
-  - Rate of change of data/RPO - sizes of changed data and data change rate.
+   - Amount of initial data initialized or synchronized in a VPG.
+   - Rate of change of data/RPO - sizes of changed data and data change rate.
 - Transit Gateway traffic cost implications.
 
 ## Considerations
+{: #considerations}
 
 Here are some key areas that you must keep in mind while designing Zerto replication for Disaster recovery environment on IBM Cloud.
 
@@ -52,5 +53,4 @@ Here are some key areas that you must keep in mind while designing Zerto replica
 | **DNS Configuration:**                                                                                                                                                                        | **Name Resolution:** Ensure proper DNS configuration for Zerto components and VMware infrastructure to enable seamless name resolution. This is essential for the identification and communication between components. Update the DNS records to point to the recovered VMs.                                                                                                                                                                   |
 | **Time Synchronization:**                                                                                                                                                                     | **NTP (Network Time Protocol):** Synchronize the clocks across Zerto components, VMware hosts, and other relevant systems using NTP to ensure accurate timestamps for logs and data consistency.                                                                                                                                                                                                                                               |
 | **Redundancy and High Availability:**                                                                                                                                                         | **Redundant Network Paths:** Configure redundant network paths to provide high availability and fault tolerance, ensuring that a failure in one path does not disrupt data transfer operations.                                                                                                                                                                                                                                                |
-
-Table 1. Networking design considerations
+{: caption="Table 1. Networking design considerations" caption-side="bottom"}

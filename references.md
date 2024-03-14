@@ -11,8 +11,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # References
-
-{: \#references}
+{: #references}
 
 -   [Zerto Product Documentation](https://help.zerto.com/)
 -   [Zerto KB](https://help.zerto.com/category/Best_Practices)

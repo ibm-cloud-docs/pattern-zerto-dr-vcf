@@ -10,23 +10,24 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Resiliency design
-
-{: \#resiliency-design}
+{: #resiliency-design}
 
 This section expands on the resilency aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
+{: #requirements}
 
 The requirements for the resiliency aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
 
 - Replicate VMware workloads from a protected site to a recovery site in a different region to enable the failover of workloads in the event of failure in the protected site.
 - Failover that meets the required RTO/RPO of the application.
 
-![Zerto_solution_for_vSphere_architecture](image/Zerto-Architecture-High-Level.svg)
+![Zerto_solution_for_vSphere_architecture](image/Zerto-Architecture-High-Level.svg){: caption="Zerto_solution_for_vSphere_architecture" caption-side="bottom"}
 
 Figure 1. Zerto solution for vSphere architecture
 
 ## Considerations
+{: #considerations}
 
 - Zerto replication is software-based and occurs in the hypervisor layer.
 - The VRA continuously replicates data from VMs and VMDKs selected by the user, compressing it and sending it to the remote site over the IBM Cloud backbone.
@@ -35,6 +36,7 @@ Figure 1. Zerto solution for vSphere architecture
 - Zerto replicates all VMs belonging to an application (defined in Virtual Protection Groups, VPGs) at the same consistent checkpoint, regardless of the number of disks or VMs.
 
 ### Recovery Scenarios
+{: #recovery scenarios}
 
 Listed below are some high-level steps typically needed to recover the protected VMware workloads from a disaster, these steps are only provided for general guidance as each customer’s workload and scenarios are unique.
 
