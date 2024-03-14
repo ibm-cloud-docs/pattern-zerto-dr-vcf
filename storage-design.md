@@ -35,8 +35,8 @@ Zerto uses a journal to track the changes occuring on the protected VMs. The Zer
 - For retention, the journal grows over time as changes accumulate. Zerto has compression and pruning techniques to manage size over time based on retention policies.
 - Regularly testing recovery is recommended to validate sufficient journal storage is provisioned based on actual workload requirements.
 
-## Journal Sizing
-{: #journal sizing}
+## Sizing-Journal
+{: #sizing}
 
 To calculate the journal size, you can use the following formula:
 
