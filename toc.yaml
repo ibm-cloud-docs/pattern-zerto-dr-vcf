@@ -24,7 +24,7 @@ toc:
   - navgroup:
       id: architecture
       topics:
-      - reference-architecture-pattern-name.md
+      - reference-architecture-zerto-vcf.md
 
   - navgroup:
       id: plan
@@ -42,7 +42,6 @@ toc:
             navtitle: Security
           - topic: resiliency-design.md
             navtitle: Resiliency
-
           - topic: service-management-design.md
             navtitle: Service Management
       - topicgroup:
