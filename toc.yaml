@@ -46,19 +46,19 @@ toc:
             navtitle: Service Management
       - topicgroup:
           label: Architecture decisions
-   #       topics:
-   #       - topic: compute-architecture.md
-   #        navtitle: Compute
-   #       - topic: storage-architecture.md
-   #         navtitle: Storage
-   #       - topic: networking-architecture.md
-   #         navtitle: Networking
-   #       - topic: security-architecture.md
-   #         navtitle: Security
-   #       - topic: resiliency-architecture.md
-   #         navtitle: Resiliency         
-   #       - topic: service-management-architecture.md
-   #         navtitle: Service Management 
+          topics:
+          - topic: compute-architecture.md
+            navtitle: Compute
+          - topic: storage-architecture.md
+            navtitle: Storage
+          - topic: networking-architecture.md
+            navtitle: Networking
+          - topic: security-architecture.md
+            navtitle: Security
+          - topic: resiliency-architecture.md
+            navtitle: Resiliency         
+          - topic: service-management-architecture.md
+            navtitle: Service Management 
 
   - navgroup:
       id: deploy
