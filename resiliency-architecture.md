@@ -7,42 +7,14 @@ subcollection: pattern-zerto-dr-vcf
 
 keywords:
 ---
+
 # Architecture decisions for resiliency
 
-{: #resiliency-architecture}
+{: \#resiliency-architecture}
 
-The following sections summarize the resiliency architecture decisions for workloads deployed on IBM Cloud VPC infrastructure.
+The following sections summarize the resiliency architecture decisions for workloads deployed on IBM Cloud VCF for Zerto.
 
-## Architecture decisions for high availability
-
-{: #high-availability}
-
-| Architecture decision                                                                 | Requirement                                                                                                                   | Option                                                                                    | Decision | Rationale |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------- | --------- |
-| High Availability Deployment                                                          | * Ensure availability of resources if outages occur. \n * Support SLA targets for availability.                               | - Single zone, single region \n - Multi zone, single region \n - Multi-zone, multi region | text     | text      |
-| High Availability Infrastructure                                                      | * Ensure availability of infrastructure resources if outages occur. \n * Support SLA targets for infrastructure availability. | text                                                                                      | text     | text      |
-| High Availability Application and Database                                            | * Ensure availability of application resources if outages occur. \n * Support SLA targets for application availability.       | text                                                                                      | text     | text      |
-| {: caption="Table 1. High availability architecture decisions" caption-side="bottom"} |                                                                                                                               |                                                                                           |          |           |
-
-## Architecture decisions for backup and restore
-
-{: #backup-and-restore}
-
-| Architecture decision                                                                  | Requirement                                                                                                     | Option | Decision | Rationale |
-| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------ | -------- | --------- |
-| Infrastructure backup                                                                  | Backup images to enable recovery.                                                                               | text   | text     | text      |
-| Database backup                                                                        | Create transaction-consistent database backups to enable recovery of database tier if unplanned outages occur.  | text   | text     | text      |
-| File Backup                                                                            | Create file system backups                                                                                      | text   | text     | text      |
-| Backup Automation                                                                      | Schedule regular database backups based on RPO requirements to enable data recovery if unplanned outages occur. | text   | text     | text      |
-| {: caption="Table 2. Backup and restore architecture decisions" caption-side="bottom"} |                                                                                                                 |        |          |           |
-
-## Architecture decisions for disaster recovery
-
-{: #disaster recovery}
-
-| Architecture decision                                                                 | Requirement                                                                                  | Option | Decision                                                                                                                                                                                        | Rationale |
-| ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| Disaster Recovery - application                                                       | Application disaster recovery capability in secondary region to meet RTO/RPO requirements    | text   | text                                                                                                                                                                                            | text      |
-| Disaster Recovery - database                                                          | Database recovery capability in secondary region                                             | text   | Continuous replication of data from a primary to a secondary system in a separate region, including in-memory loading, system replication facilitates rapid failover in the event of a disaster |           |
-| Disaster Recovery - infrastructure                                                    | Infrastructure disaster recovery capability in secondary region to meet RTO/RPO requirements | text   | text                                                                                                                                                                                            | text      |
-| {: caption="Table 2. Disaster recovery architecture decisions" caption-side="bottom"} |                                                                                              |        |                                                                                                                                                                                                 |           |
+| **Architecture decision**                      | **Requirement**                                                                               | **Options**                                               | **Decision** | **Rationale**                                                                                                                                                                                                                       |
+|------------------------------------------------|-----------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Replication type between the IBM Cloud regions | Replicate the VM data between the IBM regions so that the VMs could be recovered.             | Zerto CDP                                                 | Zerto CDP    | RPO in seconds with crash consistent application checkpoints allowing for full application recovery with a minimal loss of data                                                                                                     |
+| Disaster recovery solution resiliency          | Provide a way to recover the functions of the Zerto components in case it becomes unavailable | vSphere HA. ZVMs deployed on a Microsoft Failover Cluster | vSphere HA   | Local native vSphere HA does not require any specific configuration, ZVMs in each site kept in sync allow to recover the protected VMs even if the protected site has been completely lost while keeping the RTO as low as possible |
