@@ -14,7 +14,7 @@ This pattern describes Zerto for disaster recovery for VMware Cloud Foundations 
 
 - Disaster recovery is a shared responsibility of the Client and supported by IBM/Partner for building and supported day 2 services. If you do not use IBM/Partner for building and supported day 2 services, then you are totaly responsible for disaster recovery.
 - If the workload to be protected must support data encryption, GPDR and other regulated compliance please refer to [Deploy IBM Cloud Resiliency Design with Veeam on VMware](need link).
-- This pattern is cross-region, meaning that the recovery site is in a different IBMN Cloud region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
+- This pattern is cross-region, meaning that the recovery site is in a different IBM Cloud region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
 
 Check to ensure that the minimum distance between the protected and recovery sites meets your requirement. {: important}
 

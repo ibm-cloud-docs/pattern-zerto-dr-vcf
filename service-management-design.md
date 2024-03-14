@@ -11,7 +11,7 @@ keywords:
 
 {: \#service}
 
-This section expands on the service managemnt aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
+This section expands on the service management aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
 
 ## Requirements
 

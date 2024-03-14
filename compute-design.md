@@ -26,7 +26,7 @@ Zerto Architecture Components:
 
 - **ZVM:**
   - A Linux based virtual appliance, one per site.
-  - Uses a local embedded SQL Server is used by default, it is recommended to use an external Microsoft SQL Server for medium sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
+  - Uses a local embedded SQL Server by default, it is recommended to use an external Microsoft SQL Server for medium sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
   - For sizing see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
 - **VRA:**
   - A Linux based virtual machine installed on every hypervisor that hosts virtual machines that require protecting in the **protected** site and on every hypervisor that will host the replicated virtual machines in the **recovery site**. Install a VRA on every hypervisor host so that if protected virtual machines are moved from one host in the cluster to another host in the cluster there is always a VRA to protect the moved virtual machines.
@@ -52,7 +52,7 @@ Figure 1. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC
 This architecture pattern deployment is summarized as follows:
 
 1. Create a bare metal server VLAN interface into management subnet for Zerto ZVM. Attach to equivalent management security groups. Add required DNS A and PTR records to the DNS service by following the Zerto documentation and your solution requirements.
-2. Deploy Zerto ZVM into the VMware® VM and attach it to the management DPG by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
+2. Deploy Zerto ZVM into the VMware® VM and attach it to the management DPG (distributed port group) by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
 3. Create the required number of bare metal server VLAN interfaces with reserved IP addresses by using consecutive IP range into management subnet for Zerto VRAs. Attach to equivalent management security groups in Virtual Private Cloud (VPC).
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
@@ -67,7 +67,7 @@ Figure 2. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC
 This architecture pattern deployment is summarized as follows:
 
 1. Create a bare metal server VLAN interface into management subnet for Zerto ZVM. Attach to equivalent management security groups. Add required DNS A and PTR records to the DNS service according to the Zerto documentation and your solution requirements.
-2. Deploy Zerto ZVM into VMware® VM and attach it to the management DPG by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
+2. Deploy Zerto ZVM into VMware® VM and attach it to the management DPG (distributed port group) by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
 3. Create the required number of bare metal server VLAN interfaces with reserved IP addresses by using consecutive IP range into management subnet for Zerto VRAs. Attach to equivalent management security groups in Virtual Private Cloud (VPC).
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
