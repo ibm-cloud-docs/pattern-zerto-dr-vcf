@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023
-lastupdated: "2023-12-18"
+  years: 2024
+lastupdated: "2024-03-14"
 
 subcollection: pattern-zerto-dr-vcf
 
@@ -10,28 +10,26 @@ keywords:
 # Service management design consideration
 {: #service}
 
-This section expands on the service management aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in {{site.data.keyword.vpc_short}} pattern.
-
 ## Requirements
 {: #requirements}
 
-The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
+The following are requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern:
 
 - Monitor the usage and performance of the Zerto components.
 - Enable logging and alerting to DevOps tooling.
 
-Monitoring a Zerto Replication environment is crucial to ensure the health, performance, and reliability of the replication processes. Here are some guidance and best practices for monitoring a Zerto replication environment.
+Monitoring a Zerto Replication environment is crucial to ensure the health, performance, and reliability of the replication processes. Ensure effective monitoring of your Zerto replication environment by following these best practices.
 
 ## Considerations
 {: #considerations}
 
-Some key considerations for service management are listed below.
+Below are key considerations for service management:
 
 ### **Infrastructure monitoring:**
 {: #infrastructuremonitoring}
 
 - Monitor the underlying infrastructure components, including virtualization hosts, storage, and network devices, to identify potential bottlenecks. Consider the use of the {{site.data.keyword.cloud_notm}}console see [{{site.data.keyword.monitoringlong_notm}}](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-monitoring-iaas) or {{site.data.keyword.cloud_notm}}services such as {{site.data.keyword.monitoringlong_notm}}, see [Monitoring for VMware vCenter Server deployments](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-vmware-vcenter).
-- Use performance monitoring tools specific to your virtualization platform to track resource utilization. Review the use of Zerto Analytics as your performance monitoring tool, see [VMware vSphere Monitoring](https://helpcenter.veeam.com/docs/one/monitor/vsphere_monitoring.html?ver=120) or consider the optional add-on service [VMware Aria Operations and VMware Aria Operations for Logs on {{site.data.keyword.cloud_notm}} overview](https://test.cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview)
+- Use performance monitoring tools specific to your virtualization platform to track resource utilization. Review Zerto Analytics for performance monitoring, or consider VMware Aria Operations and Logs on IBM Cloud. For more information see [VMware vSphere Monitoring](https://helpcenter.veeam.com/docs/one/monitor/vsphere_monitoring.html?ver=120), [VMware Aria Operations and VMware Aria Operations for Logs on {{site.data.keyword.cloud_notm}} overview](https://test.cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview)
 
 ### **Log Analysis:**
 {: #loganalysis}
@@ -48,8 +46,8 @@ Some key considerations for service management are listed below.
 - Monitor Windows Event Logs for events related to Zerto and address any issues promptly.
 - This is performed using {{site.data.keyword.loganalysislong_notm}}.
 - All alerts issued by Zerto are displayed in the Zerto User Interface. See [Zerto alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alerts.htm).
-- Zerto Analytics allows you to track and monitor the health of your entire protected environment. Using Zerto Analytics, you can see aggregated information from the Zerto Virtual Managers, and view the status of your environment. All your alerts, tasks, events and information on Virtual Protection Groups (VPGs) can be viewed together. Zerto Analytics is developed with an API first approach, therefore, everything that is presented in the GUI, is also available with APIs. The APIs are delivered with Swagger open source that help you develop and test REST integration using standardized examples. This allows you to easily populate custom portals with Zerto Analytic content. See [Zerto Analytics](https://help.zerto.com/bundle/Zerto.Analytics.HTML/page/Zerto_Analytics_-_Overview_and_Use.htm).
-- Zerto could issue alerts through the vCenter's Alarms feature. The actions triggered by these alarms can be customized by the administrator. This article will detail how to configure these actions, which include sending an email, a notification trap, or running a command from the vCenter server. See [VMware alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alarms_In_VMware_vSphere.htm).
+- Zerto Analytics provides comprehensive monitoring and health tracking for your protected environment. Using Zerto Analytics, you can see aggregated information from the Zerto Virtual Managers, and view the status of your environment. All your alerts, tasks, events, and information on Virtual Protection Groups (VPGs) can be viewed together. Zerto Analytics is developed with an API first approach, therefore, everything that is presented in the GUI, is also available with APIs. The APIs are delivered with Swagger open source that help you develop, test REST integration using standardized examples and easily populate custom portals with Zerto Analytics content. See [Zerto Analytics](https://help.zerto.com/bundle/Zerto.Analytics.HTML/page/Zerto_Analytics_-_Overview_and_Use.htm).
+- Zerto could issue alerts through the vCenter's Alarms feature. The actions triggered by these alarms can be customized by the administrator. For further detail how to configure these actions, which include sending an email, a notification trap, or running a command from the vCenter server see[VMware alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alarms_In_VMware_vSphere.htm),
 - By default, Zerto store its logs locally on the host where it is installed (see [Understanding Logs](https://help.zerto.com/bundle/Admin.VC.HTML.97/page/Understanding_the_Logs.htm)).
 - Email notifications or SNMP traps can also be used for alerting or job monitoring. See [Zerto email alerts](https://help.zerto.com/kb/000003529).
 
@@ -71,5 +69,5 @@ Some key considerations for service management are listed below.
 **Automation**:
 
 - The automated deployment of VMware Cloud Foundation on {{site.data.keyword.vpc_short}} does not include any Zerto components. Therefore, you need to manually install and configure the required Zerto components. **To obtain an image to install the required software in this architecture pattern, raise an {{site.data.keyword.cloud_notm}}Support ticket to IBM Cloud® for VMware Solutions.**
-- Manage the protection and replication of virtual machines between the protected and recovery sites, using the Zerto User Interface.
+- Manage the protection and replication of virtual machines between the protected and recovery sites, by using the Zerto User Interface.
 - Zerto also provides a set of RESTful APIs and PowerShell cmdlets to enable incorporating some of the disaster recovery functionality within scripts or programs. See [Zerto Cloud Manager Restful APIs](https://help.zerto.com/bundle/API.ZCM.HTML.10.0_U3/page/Introduction_to_the_ZCM_RESTful_APIs.htm).
