@@ -30,19 +30,19 @@ Monitoring a Zerto Replication environment is crucial to ensure the health, perf
 
 Some key considerations for service management are listed below.
 
-**Infrastructure monitoring:**
+### **Infrastructure monitoring:**
 
 - Monitor the underlying infrastructure components, including virtualization hosts, storage, and network devices, to identify potential bottlenecks. Consider the use of the IBM Cloud console see [IBM Cloud Monitoring](https://test.cloud.ibm.com/docs/cloud-infrastructure?topic=cloud-infrastructure-monitoring-iaas) or IBM Cloud services such as IBM Cloud Monitoring, see [Monitoring for VMware vCenter Server deployments](https://test.cloud.ibm.com/docs/monitoring?topic=monitoring-vmware-vcenter).
 - Use performance monitoring tools specific to your virtualization platform to track resource utilization. Review the use of Zerto Analytics as your performance monitoring tool, see [VMware vSphere Monitoring](https://helpcenter.veeam.com/docs/one/monitor/vsphere_monitoring.html?ver=120) or consider the optional add-on service [VMware Aria Operations and VMware Aria Operations for Logs on IBM Cloud overview](https://test.cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview)
 
-**Log Analysis:**
+### **Log Analysis:**
 
 - Regularly review Zerto log files for any warning or error messages. Logs can provide detailed information about the health and performance of various components. See [Collecting Zerto logs](https://help.zerto.com/bundle/Admin.VC.HTML.95/page/Collecting_Zerto_Logs.htm).
 - Configure log retention and archiving to ensure that historical logs are available for troubleshooting and analysis.
 - Consider the use of IBM Log analysis. See [Getting started with IBM Log Analysis](https://test.cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started). See [Logging for VMware vCenter Server deployments](https://test.cloud.ibm.com/docs/log-analysis?topic=log-analysis-vmware-vcenter).
 - Consider the optional add-on service [VMware Aria Operations and VMware Aria Operations for Logs on IBM Cloud overview](https://test.cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview).
 
-**Event Logs and Syslog Integration:**
+### **Event Logs and Syslog Integration:**
 
 - Integrate Zerto with centralized logging systems or syslog servers to consolidate and analyze logs across the environment. See [syslog](https://help.zerto.com/kb/000003918).
 - Monitor Windows Event Logs for events related to Zerto and address any issues promptly.
@@ -53,7 +53,7 @@ Some key considerations for service management are listed below.
 - By default, Zerto store its logs locally on the host where it is installed (see [Understanding Logs](https://help.zerto.com/bundle/Admin.VC.HTML.97/page/Understanding_the_Logs.htm)).
 - Email notifications or SNMP traps can also be used for alerting or job monitoring. See [Zerto email alerts](https://help.zerto.com/kb/000003529).
 
-**Network Monitoring:**
+### **Network Monitoring:**
 
 - Monitor network traffic between the primary and secondary sites to ensure that replication traffic is not impeded. See [Monitoring Peer Sites](https://help.zerto.com/bundle/Admin.VC.HTML.90/page/Monitoring_Peer_Sites_%E2%80%93_The_SITES_Tab.htm).
 - Set up alerts for unusual network behavior or performance issues.
