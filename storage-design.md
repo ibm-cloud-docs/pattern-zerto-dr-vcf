@@ -12,7 +12,7 @@ keywords:
 # Storage design
 {: #storage-design}
 
-This section expands on the storage aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
+This section expands on the storage aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in {{site.data.keyword.vpc_short}} pattern.
 
 ## Requirements
 {: #requirements}
@@ -54,4 +54,4 @@ See [Journal_Overview__Sizing_and_Best_Practice](https://help.zerto.com/bundle/B
 {: #considerations}
 
 - The ZVMs and VRAs are deployed in the VCF environment, so they will use storage from the provisioned datastore, which in the case of VCF is vSAN based.
-- For replication, an important consideration, especially given that vSAN is being used for the VMware VCF on IBM Cloud datastores, is to properly size the recovery site VMware deployment datastores so that they can accommodate the replicas (as scaling a vSAN cluster involves adding additional bare metal ESXis to the cluster).
+- For replication, an important consideration, especially given that vSAN is being used for the VMware VCF on {{site.data.keyword.cloud_notm}} datastores, is to properly size the recovery site VMware deployment datastores so that they can accommodate the replicas (as scaling a vSAN cluster involves adding additional bare metal ESXis to the cluster).

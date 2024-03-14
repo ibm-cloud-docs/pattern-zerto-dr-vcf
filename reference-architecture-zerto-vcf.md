@@ -8,20 +8,20 @@ keywords:
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploy IBM Cloud resiliency design with Zerto on IBM Cloud VMware
+# Deploy {{site.data.keyword.cloud_notm}} resiliency design with Zerto on {{site.data.keyword.cloud_notm}} VMware
 {: #resiliency-zerto}
 
-This pattern describes Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads where both the protected and recovery sites are in IBM Cloud VPC. The deployment of the Zerto solution will need to be done manually, however, Zerto licenses can be ordered through VMware Solutions portal.
+This pattern describes Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads where both the protected and recovery sites are in {{site.data.keyword.vpc_short}}. The deployment of the Zerto solution will need to be done manually, however, Zerto licenses can be ordered through VMware Solutions portal.
 
 - Disaster recovery is a shared responsibility of the Client and supported by IBM/Partner for building and supported day 2 services. If you do not use IBM/Partner for building and supported day 2 services, then you are totaly responsible for disaster recovery.
-- If the workload to be protected must support data encryption, GPDR and other regulated compliance please refer to [Deploy IBM Cloud Resiliency Design with Veeam on VMware](need link).
-- This pattern is cross-region, meaning that the recovery site is in a different IBM Cloud region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
+- If the workload to be protected must support data encryption, GPDR and other regulated compliance please refer to [Deploy {{site.data.keyword.cloud_notm}} Resiliency Design with Veeam on VMware](https://cloud.ibm.com/docs/vmware-cross-region-dr?topic=vmware-cross-region-dr-overview).
+- This pattern is cross-region, meaning that the recovery site is in a different {{site.data.keyword.cloud_notm}} region than the protected location e.g. protected site is Frankfurt and the recovery location is Madrid. However, if required the pattern can use a recovery site in the same geographic region, but a different Availability Zone if required e.g. Frankfurt AZ1 and Frankfurt AZ3.
 
 Check to ensure that the minimum distance between the protected and recovery sites meets your requirement. {: important}
 
 This pattern builds on Zerto best-practice guidance, see [Zerto KB](https://help.zerto.com/category/Best_Practices).
 
-VCF in IBM Cloud VPC can be deployed as one of two architectures; standard and consolidated. This pattern is based on the consolidated architecture but includes additional considerations for the standard architecture.{: note}
+VCF in {{site.data.keyword.vpc_short}} can be deployed as one of two architectures; standard and consolidated. This pattern is based on the consolidated architecture but includes additional considerations for the standard architecture.{: note}
 
 ## Zerto Architecture diagram
 {: #resiliency-architecture}
@@ -41,8 +41,8 @@ For the reference architecture described below we assume you have already deploy
 
 The key features of this pattern are as follows:
 
-- **IBM Cloud Infrastructure:**
-   - Two VMware Cloud Foundation environments hosted on IBM Cloud. Region 1 hosts the protected environment, and Region 2 hosts the recovery environment. Potentially the recovery region can also host development and test workloads that can be “sacrificed” when a disaster recovery is invoked or tested.
+- **{{site.data.keyword.cloud_notm}} Infrastructure:**
+   - Two VMware Cloud Foundation environments hosted on {{site.data.keyword.cloud_notm}}. Region 1 hosts the protected environment, and Region 2 hosts the recovery environment. Potentially the recovery region can also host development and test workloads that can be “sacrificed” when a disaster recovery is invoked or tested.
    - Multiple ESXi bare metal servers forming a cluster hosting your virtual machines.
 - **Zerto Virtual Manager (ZVM):**
    - Manages everything required for the replication between the protection and recovery sites, except for  the actual replication of data.
@@ -69,7 +69,7 @@ The key features of this pattern are as follows:
 
 Consider the following when reviewing the pattern:
 
-- Network connectivity from on-premises to the IBM Cloud environments is considered as out of scope for this pattern.
+- Network connectivity from on-premises to the {{site.data.keyword.cloud_notm}} environments is considered as out of scope for this pattern.
 - Zerto will not impact the operation of your VMs. This is because Zerto captures change data while it is still in the memory of the ESX host on its way to a datastore. The only time this is not the case is during the initial sync or a delta sync.
 - For more information on the Zerto components see the following:
    - [Technical_Specifications](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-addingzertodr).
@@ -78,7 +78,7 @@ Consider the following when reviewing the pattern:
 ## IBM Architecture Framework
 {: #architecture}
 
-Following the IBM Architecture Framework, the VMware VCF in IBM Cloud VPC disaster recovery solution using Zerto covers design considerations and architecture decisions for the following aspects and domains:
+Following the IBM Architecture Framework, the VMware VCF in {{site.data.keyword.vpc_short}} disaster recovery solution using Zerto covers design considerations and architecture decisions for the following aspects and domains:
 
 - Compute: Virtual Servers.
 - Storage: Primary Storage, Backup.
@@ -87,7 +87,7 @@ Following the IBM Architecture Framework, the VMware VCF in IBM Cloud VPC disast
 - Resiliency: High Availability, Disaster Recovery.
 - Service Management: Monitoring, Logging, Auditing, Alerting.
 
-![img](image/heat-map-Zerto.svg) Figure 2 Architecture framework for Zerto deployment on VMware on IBM Cloud
+![img](image/heat-map-Zerto.svg) Figure 2 Architecture framework for Zerto deployment on VMware on {{site.data.keyword.cloud_notm}}
 
 The IBM Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Architecture framework](https://test.cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)
 
@@ -100,7 +100,7 @@ The IBM Architecture Framework provides a consistent approach to design cloud so
 | Storage            | Storage to support Zerto components and to replicate the protected virtual machines                                                                                                                                            |
 | Resiliency         | Replicate VMware workloads from a protected site to a recovery site in a different region for failover of workloads in the event of failure in the protected site. Failover that meets the required RTO/RPO of the application |
 | Service Management | Monitor the usage and performance of the Zerto components. Enable logging and alerting to DevOps tooling                                                                                                                       |
-{: caption="Table 1. Zerto Disaster Recovery solution requirements for VMware Workloads on IBM Cloud VMware Foundation on VPC" caption-side="bottom"}
+{: caption="Table 1. Zerto Disaster Recovery solution requirements for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Foundation on VPC" caption-side="bottom"}
 
 
 ### Components
@@ -112,8 +112,8 @@ The IBM Architecture Framework provides a consistent approach to design cloud so
 | Compute                      | Virtual Machine                                     | Compute for ZVM and VRAs                                                                                                                                                                                                                                                                     |
 | Storage                      | vSAN                                                | Storage for ZVM and VRAs                                                                                                                                                                                                                                                                     |
 | Networking                   | Enterprise Connectivity                             | Connectivity to on-premises locations (**considered as out of scope for this pattern**)                                                                                                                                                                                                |
-|                              | IBM Cloud Backbone                                  | The IBM Cloud private network is used to replicate traffic between the regions. Control traffic between the ZVM and the data-plane VRA components also traverses this network.                                                                                                               |
+|                              | {{site.data.keyword.cloud_notm}} Backbone                                  | The {{site.data.keyword.cloud_notm}} private network is used to replicate traffic between the regions. Control traffic between the ZVM and the data-plane VRA components also traverses this network.                                                                                                               |
 |                              | Internet                                            | Internet access to connect to Zerto CallHome Server, Zerto Analytics. and Zerto support.                                                                                                                                                                                                     |
 | **Resiliency**         | Zerto                                               | Zerto provides the resiliency of the VMware virtual machines to be protected and recovered. The resiliency of the Zerto data-plane components is accomplished by deploying multiple VRAs. For the ZVM, vSphere HA and backups of the database enables resiliency of the Zerto control-plane. |
 | **Service Management** | **Optional** - Zerto Analytics, Cloud Control | Zerto Analytics and Cloud Control provide visibility into Zerto-protected workloads and provide monitoring, reporting, alerting, diagnostics with automated resolutions and infrastructure utilization and capacity planning.                                                                |
-{: caption="Table 2. Zerto Disaster Recovery solution components for VMware Workloads on IBM Cloud VMware Cloud Foundations on VPC" caption-side="bottom"}
+{: caption="Table 2. Zerto Disaster Recovery solution components for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Cloud Foundations on VPC" caption-side="bottom"}

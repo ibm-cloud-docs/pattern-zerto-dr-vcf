@@ -12,7 +12,7 @@ keywords:
 # Compute design
 {: #compute-design}
 
-This section expands on the compute aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
+This section expands on the compute aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in {{site.data.keyword.vpc_short}} pattern.
 
 ## Requirements
 {: #requirements}
@@ -37,7 +37,7 @@ Zerto Architecture Components:
 ## Deployment Options
 {: #deploymentoptions}
 
-There are two deployment options for VMware Cloud Foundation on IBM Cloud VPC. These deployment options will determine where the zerto components need to be deployed.
+There are two deployment options for VMware Cloud Foundation on {{site.data.keyword.vpc_short}}. These deployment options will determine where the zerto components need to be deployed.
 
 1. **Standard Architecture:** Separate VMware VCF Management and Workload domains.
 2. **Consolidated Architecture:** Consolidated domain where both the VCF Management and Workload domains reside.
@@ -49,7 +49,7 @@ The following diagram introduces the high-level steps to deploy Zerto on a VMwar
 
 ![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg){: caption="Zerto_VCF_IBM_Cloud_Standard_Architecture" caption-side="bottom"}
 
-Figure 1. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC standard architecture
+Figure 1. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} standard architecture
 
 This architecture pattern deployment is summarized as follows:
 
@@ -65,7 +65,7 @@ The following diagram introduces the high-level steps to deploy Zerto on a VMwar
 
 ![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg){: caption="Zerto_VCF_IBM_Cloud_Consolidated_Architecture" caption-side="bottom"}
 
-Figure 2. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC consolidated architecture
+Figure 2. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} consolidated architecture
 
 This architecture pattern deployment is summarized as follows:
 

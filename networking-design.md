@@ -12,7 +12,7 @@ keywords:
 # Network design
 {: #network-design}
 
-This section expands on the network aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
+This section expands on the network aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in {{site.data.keyword.vpc_short}} pattern.
 
 ## Requirements
 {: #requirements}
@@ -25,13 +25,13 @@ The requirements for the network aspect for the Zerto for disaster recovery for 
 - The ZVMs from each site must be able to communicate with the local ESXi hosts and vCenter.
 - The VRAs from each site must be able to communicate with the local ZVM.
 - The VRAs in the protected site must be able to communicate with the VRAs in the recovery site for the replication and restoration of workloads.
-- Cross VPC traffic flow. In this pattern, the connectivity between the protected and recovery site is achieved by using a global transit gateway. The transit gateway is an IBM Cloud component allowing to easily interconnect IBM Cloud VPCs (as well as IBM Cloud classic and PowerVS environments). In the case of a global transit gateway, these resources can be located in different IBM Cloud regions.
+- Cross VPC traffic flow. In this pattern, the connectivity between the protected and recovery site is achieved by using a global transit gateway. The transit gateway is an {{site.data.keyword.cloud_notm}} component allowing to easily interconnect {{site.data.keyword.vpc_short}}s (as well as {{site.data.keyword.vpc_short}} classic and {{site.data.keyword.powerSys_notm}} environments). In the case of a global transit gateway, these resources can be located in different {{site.data.keyword.vpc_short}} regions.
 
 When you design or deploy this architecture pattern, consider the following:
 
 - Zerto architecture does not support NAT (Network Address Translation) firewalls.
 - Design your network flows carefully. For more information about ports and protocols, see [Zerto network ports and protocols](https://help.zerto.com/bundle/Admin.VC.HTML.90/page/Port_Usage.htm).
-- Ensure that the IBM Cloud VPC security groups and firewall rules allow the replication and control traffic.
+- Ensure that the {{site.data.keyword.vpc_short}} security groups and firewall rules allow the replication and control traffic.
 - Ensure that the networks are properly routed and possible firewall rules allow the required traffic at both source and destination sites.
 - Performance:
    - Amount of initial data initialized or synchronized in a VPG.
@@ -41,7 +41,7 @@ When you design or deploy this architecture pattern, consider the following:
 ## Considerations
 {: #considerations}
 
-Here are some key areas that you must keep in mind while designing Zerto replication for Disaster recovery environment on IBM Cloud.
+Here are some key areas that you must keep in mind while designing Zerto replication for Disaster recovery environment on {{site.data.keyword.cloud_notm}}.
 
 | **Area**                                                                                                                                                                                      | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

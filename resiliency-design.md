@@ -12,7 +12,7 @@ keywords:
 # Resiliency design
 {: #resiliency-design}
 
-This section expands on the resilency aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
+This section expands on the resilency aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in {{site.data.keyword.vpc_short}} pattern.
 
 ## Requirements
 {: #requirements}
@@ -30,7 +30,7 @@ Figure 1. Zerto solution for vSphere architecture
 {: #considerations}
 
 - Zerto replication is software-based and occurs in the hypervisor layer.
-- The VRA continuously replicates data from VMs and VMDKs selected by the user, compressing it and sending it to the remote site over the IBM Cloud backbone.
+- The VRA continuously replicates data from VMs and VMDKs selected by the user, compressing it and sending it to the remote site over the {{site.data.keyword.cloud_notm}} backbone.
 - Every write to a protected virtual machine is copied by Zerto Virtual Replication. The write continues to be processed normally on the protected site and the copy is sent asynchronously to the recovery site and written to a journal managed by a Virtual Replication Appliance (VRA). Each protected virtual machine has its own journal.
 - Replication is near-synchronous.
 - Zerto replicates all VMs belonging to an application (defined in Virtual Protection Groups, VPGs) at the same consistent checkpoint, regardless of the number of disks or VMs.
