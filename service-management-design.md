@@ -7,7 +7,7 @@ subcollection: pattern-zerto-dr-vcf
 
 keywords:
 ---
-## Service management design consideration
+# Service management design consideration
 
 {: #service}
 
