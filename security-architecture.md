@@ -9,7 +9,7 @@ keywords:
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Security design
+# Security Architecture decisions
 
 {: #security-architecture}
 
