@@ -9,9 +9,7 @@ keywords:
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-# Deploy IBM Cloud Resiliency Design with Zerto on VMware
-
-## Overview
+# Overview
 
 This pattern describes a Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads where both the protected and recovery sites are hosted in IBM Cloud Virtual Private Cloud (VPC).
 
@@ -29,7 +27,7 @@ The decision tree, shown below, is a selection criteria for selecting Zerto as t
 
 Figure 1. Disaster recovery decision tree for VMware on IBM Cloud
 
-Following the Architecture Framework, the ` pattern-zerto-dr-vcf ` covers design considerations and architecture decisions for the following aspects and domains:
+Following the Architecture Framework, the `pattern-zerto-dr-vcf` covers design considerations and architecture decisions for the following aspects and domains:
 
 - Compute: Virtual Servers
 - Storage: Primary Storage, Backup Storage

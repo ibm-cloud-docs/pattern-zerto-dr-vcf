@@ -8,7 +8,7 @@ keywords:
 ---
 {{site.data.keyword.attribute-definition-list}}
 
-## Deploy IBM Cloud resiliency design with Zerto on IBM Cloud VMware
+# Deploy IBM Cloud resiliency design with Zerto on IBM Cloud VMware
 
 This pattern describes Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads where both the protected and recovery sites are in IBM Cloud VPC. The deployment of the Zerto solution will need to be done manually, however, Zerto licenses can be ordered through VMware Solutions portal.
 
