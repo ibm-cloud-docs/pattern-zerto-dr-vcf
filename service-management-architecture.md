@@ -8,8 +8,7 @@ subcollection: pattern-zerto-dr-vcf
 keywords:
 ---
 # Architecture decisions for service management
-
-{: #service}
+{: #service-management}
 
 The following sections summarize the architecture decisions for service management for the Zerto for VCF resiliency pattern.
 
