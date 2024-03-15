@@ -10,7 +10,6 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Overview
-
 {: #overview}
 
 This pattern describes a Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads where both the protected and recovery sites are hosted in {{site.data.keyword.vpc_full}} (VPC).
