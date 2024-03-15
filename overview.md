@@ -10,6 +10,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Overview
+
 {: #overview}
 
 This pattern describes a Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads where both the protected and recovery sites are hosted in {{site.data.keyword.vpc_full}} (VPC).
@@ -27,14 +28,3 @@ The following decision tree illustrates the selection criteria for selecting Zer
 ![Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree](image/Zerto-tree.svg){: caption="Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree" caption-side="bottom"}
 
 Figure 1. Disaster recovery decision tree for {{site.data.keyword.vmwaresolutions_full_notm}}
-
-Following the Architecture Framework, the `pattern-zerto-dr-vcf` covers design considerations and architecture decisions for the following aspects and domains:
-
-- Compute: Virtual Servers
-- Storage: Primary Storage, Backup Storage
-- Networking: Enterprise Connectivity, Segmentation, and Isolation, Cloud Native Connectivity, Load Balancing, DNS
-- Security: Data Security, Identity and Access Management, Application Security, Infrastructure and Endpoint Security
-- Resiliency: High Availability, Backup, and Restore
-- Service Management: Monitoring, Logging, Auditing, Alerting
-
- The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework).
