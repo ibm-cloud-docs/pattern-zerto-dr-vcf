@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023
-lastupdated: "2023-12-26"
+  years: 2024
+lastupdated: "2024-03-14"
 
 subcollection: pattern-zerto-dr-vcf
 
@@ -17,6 +17,6 @@ keywords:
 
 | **Architecture decision**                                                 | **Requirement**                        | **Options** | **Decision** | **Rationale**                                                              |
 | ------------------------------------------------------------------------------- | -------------------------------------------- | ----------------- | ------------------ | -------------------------------------------------------------------------------- |
-| ZVM Storage                                                                     | Provide storage for the Zerto ZVM component. | VMware vSAN       | VMware vSAN        | vSAN is the only storage supported for datastores in VMware VCF on IBM Cloud VPC |
-| VRA Storage                                                                     | Provide storage for the Zerto VRA component. | VMware vSAN       | VMware vSAN        | vSAN is the only storage supported for datastores in VMware VCF on IBM Cloud VPC |
+| ZVM Storage                                                                     | Provide storage for the Zerto ZVM component. | - VMware vSAN       | VMware vSAN        | vSAN is the only storage that is supported for datastores in VMware VCF on {{site.data.keyword.vpc_short}} |
+| VRA Storage                                                                     | Provide storage for the Zerto VRA component. | - VMware vSAN       | VMware vSAN        | vSAN is the only storage that is supported for datastores in VMware VCF on {{site.data.keyword.vpc_short}} |
 {: caption="Table 1. Architecture decisions for storage" caption-side="bottom"}

@@ -12,12 +12,10 @@ keywords:
 # Compute design
 {: #compute-design}
 
-This section expands on the compute aspect of the IBM Architecture framework in respect of the Zerto disaster recovery for VMware Cloud Foundation in IBM Cloud VPC pattern.
-
 ## Requirements
 {: #requirements}
 
-The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on the following:
+The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on:
 
 - The compute required for the Zerto components.
 - The compute aspect for the recovered workloads.
@@ -26,10 +24,11 @@ Zerto Architecture Components:
 
 - **ZVM:**
    - A Linux based virtual appliance, one per site.
-   - Uses a local embedded SQL Server by default, it is recommended to use an external Microsoft SQL Server for medium sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
-   - For sizing see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
+   - Uses a local embedded SQL Server by default, it is recommended to use an external Microsoft SQL Server for medium-sized and larger environments (\>250 incoming VPGs) to prevent performance degradation. https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm
+   - For sizing see, [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
 - **VRA:**
-   - A Linux based virtual machine installed on every hypervisor that hosts virtual machines that require protecting in the **protected** site and on every hypervisor that will host the replicated virtual machines in the **recovery site**. Install a VRA on every hypervisor host so that if protected virtual machines are moved from one host in the cluster to another host in the cluster there is always a VRA to protect the moved virtual machines.
+   - A Linux based virtual machine installed on every hypervisor hosting virtual machines that require protecting in the **protected** site and every hypervisor hosting replicated virtual machines in the **recovery site**.
+   - Install a VRA on every hypervisor host so that if protected virtual machines are moved from one host to another host in the cluster to ensure a VRA to protect the moved virtual machines.
    - A VRA compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
    - A VRA can manage a maximum of 1500 volumes, whether these volumes are being protected or recovered.
    - For sizing, see [Requirements for Virtual Replication Appliances](https://help.zerto.com/bundle/Prereq.VC.HTML.90/page/Requirements_for_Virtual_Replication_Appliances.htm).
@@ -37,7 +36,7 @@ Zerto Architecture Components:
 ## Deployment Options
 {: #deploymentoptions}
 
-There are two deployment options for VMware Cloud Foundation on IBM Cloud VPC. These deployment options will determine where the zerto components need to be deployed.
+Two deployment options for VMware Cloud Foundation on {{site.data.keyword.vpc_short}} are available. These deployment options determine where the zerto components need to be deployed.
 
 1. **Standard Architecture:** Separate VMware VCF Management and Workload domains.
 2. **Consolidated Architecture:** Consolidated domain where both the VCF Management and Workload domains reside.
@@ -49,9 +48,9 @@ The following diagram introduces the high-level steps to deploy Zerto on a VMwar
 
 ![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg){: caption="Zerto_VCF_IBM_Cloud_Standard_Architecture" caption-side="bottom"}
 
-Figure 1. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC standard architecture
+Figure 1. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} standard architecture
 
-This architecture pattern deployment is summarized as follows:
+The following summarizes the architecture pattern deployment:
 
 1. Create a bare metal server VLAN interface into management subnet for Zerto ZVM. Attach to equivalent management security groups. Add required DNS A and PTR records to the DNS service by following the Zerto documentation and your solution requirements.
 2. Deploy Zerto ZVM into the VMware® VM and attach it to the management DPG (distributed port group) by using the provisioned IP address. Plan and size your deployment. Obtain a license through the VMware Solutions console.
@@ -65,7 +64,7 @@ The following diagram introduces the high-level steps to deploy Zerto on a VMwar
 
 ![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg){: caption="Zerto_VCF_IBM_Cloud_Consolidated_Architecture" caption-side="bottom"}
 
-Figure 2. Zerto Disaster Recovery solution for VMware Workloads on IBM Cloud VPC consolidated architecture
+Figure 2. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} consolidated architecture
 
 This architecture pattern deployment is summarized as follows:
 
@@ -77,6 +76,6 @@ This architecture pattern deployment is summarized as follows:
 ### Disaster recovery site compute sizing
 {: #sizing}
 
-The disaster recovery environment needs to always have enough bare metals ESXi hosts provisioned in the recovery location to be able to bring up the replicas of the protected workloads when a disaster renders the production VMware environment unavailable.
+ Ensure adequate bare metal ESXi hosts are provisioned in the recovery location to support replicas of critical workloads in case of a disaster.
 
-To optimize the cost of having bare metal ESXi hosts constantly provisioned on the recovery site with no actual workload, a possibility is to run “sacrificial” development or test workloads, for which no disaster recovery is needed and that could be powered off to free capacity in the event of a disaster recovery invocation or test, on the recovery site. Offloading this type of workloads to the recovery site also reduces the number/size of ESXi hosts needed on the production site.
+Minimize costs by running sacrificial dev/test workloads in the recovery site, which can be powered off during a disaster recovery event.  Offloading workloads to the recovery site also reduces the number or size of ESXi hosts needed on the production site.
