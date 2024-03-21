@@ -13,7 +13,7 @@ keywords:
 {: #compute-design}
 
 ## Requirements
-{: #requirements}
+{: #compute-requirements}
 
 The requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern focus on:
 
@@ -58,7 +58,7 @@ The following summarizes the architecture pattern deployment:
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
 ### Consolidated architecture deployment on VCF
-{: #architecture}
+{: #compute-architecture}
 
 The following diagram introduces the high-level steps to deploy Zerto on a VMware Cloud Foundation consolidated architecture. In this architecture pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs).
 
@@ -74,8 +74,8 @@ This architecture pattern deployment is summarized as follows:
 4. Configure Zerto ZVM and deploy VRAs by using the IP addresses attached to the VLAN interfaces.
 
 ### Disaster recovery site compute sizing
-{: #sizing}
+{: #disaster-recovery-compute-sizing}
 
  Ensure adequate bare metal ESXi hosts are provisioned in the recovery location to support replicas of critical workloads in case of a disaster.
 
-Minimize costs by running sacrificial dev/test workloads in the recovery site, which can be powered off during a disaster recovery event.  Offloading workloads to the recovery site also reduces the number or size of ESXi hosts needed on the production site.
+Minimize costs by running sacrificial dev/test workloads in the recovery site, which can be powered off during a disaster recovery event.  Offloading workloads to the recovery site also reduces ESXi host quanity or size on the production site.

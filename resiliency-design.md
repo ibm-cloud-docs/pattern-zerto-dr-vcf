@@ -13,7 +13,7 @@ keywords:
 {: #resiliency-design}
 
 ## Requirements
-{: #requirements}
+{: #resiliency-requirements}
 
 The following are requirements for the resiliency aspect for the Zerto for disaster recovery for VMware workloads pattern:
 
@@ -25,7 +25,7 @@ The following are requirements for the resiliency aspect for the Zerto for disas
 Figure 1. Zerto solution for vSphere architecture
 
 ## Considerations
-{: #considerations}
+{: #resiliency-considerations}
 
 - Zerto replication is software-based and occurs in the hypervisor layer.
 - The VRA continuously replicates data from VMs and VMDKs selected by the user, compressing it and sending it to the remote site over the {{site.data.keyword.cloud_notm}} backbone.

@@ -13,7 +13,7 @@ keywords:
 {: #storage-design}
 
 ## Requirements
-{: #requirements}
+{: #storage-requirements}
 
 The following requirements are for the storage aspect for the Zerto for disaster recovery for VMware workloads pattern:
 
@@ -26,15 +26,15 @@ The following requirements are for the storage aspect for the Zerto for disaster
 Zerto uses a journal to track the changes that are occurring on the protected VMs. The Zerto Journal is where replication data is stored during ongoing replication between sites. Journaling enables recovery points in case of failure or rollback to previous points in time. Zerto recommends:
 
 - Journal storage should be accessible by all the recovery hosts and not just by one of the hosts.
-- The journal size depends on the amount of data replicated, the replication update frequency, and retention period.
-- As a general guideline, Zerto recommends provisioning at least 10-20% of the total replicated data size for journal storage. For example, if replicating 1 TB of VM data, provision 100-200 GB for the journal.
+- Sizing of the journal depends on the amount of data replicated, the replication update frequency, and retention period.
+- Zerto recommends setting aside 10-20% of the total data replication size for journal storage. For example, if replicating 1 TB of VM data, provision 100-200 GB for the journal.
 - The journal storage needs fast IOPS performance since it is actively written to during replication. SSDs are recommended for best performance.
 - Each protected virtual machine has its own dedicated journal. The journal associated to a protected VM is stored by default on the storage used for the recovery this VM (on the recovery site).
 - For retention, the journal grows over time as changes accumulate. Zerto has compression and pruning techniques to manage size over time based on retention policies.
 - Regularly testing recovery is recommended to validate that sufficient journal storage is provisioned based on actual workload requirements.
 
 ## Sizing-Journal
-{: #sizing}
+{: #journal-sizing}
 
 To calculate the journal size, you can use the following formula:
 
@@ -49,7 +49,7 @@ So you would need at least 264 GB of free storage space on the target site to ac
 See [Journal_Overview__Sizing_and_Best_Practice](https://help.zerto.com/bundle/BP.Journal.Sizing.HTML/page/Journal_Overview__Sizing_and_Best_Practice.htm)
 
 ## Considerations
-{: #considerations}
+{: #storage-considerations}
 
 - The ZVMs and VRAs are deployed in the VCF environment, they use storage from the provisioned datastore, which in the case of VCF is vSAN based.
 - For replication, an important consideration, especially given that vSAN is used for the VMware VCF on {{site.data.keyword.cloud_notm}} datastores, is to properly size the recovery site VMware deployment datastores to accommodate the replicas. Scaling a vSAN cluster involves adding additional bare metal ESXis to the cluster.

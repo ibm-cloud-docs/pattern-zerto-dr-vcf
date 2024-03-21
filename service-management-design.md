@@ -11,7 +11,7 @@ keywords:
 {: #service}
 
 ## Requirements
-{: #requirements}
+{: #service-management-requirements}
 
 The following are requirements for the compute aspect for the Zerto for disaster recovery for VMware workloads pattern:
 
@@ -21,9 +21,9 @@ The following are requirements for the compute aspect for the Zerto for disaster
 Monitoring a Zerto Replication environment is crucial to ensure the health, performance, and reliability of the replication processes. Ensure effective monitoring of your Zerto replication environment by following these best practices.
 
 ## Considerations
-{: #considerations}
+{: #monitoring-considerations}
 
-Below are key considerations for service management:
+Key considerations for service management:
 
 ### **Infrastructure monitoring:**
 {: #infrastructuremonitoring}

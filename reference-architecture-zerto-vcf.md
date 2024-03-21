@@ -68,9 +68,9 @@ Key features of this pattern are:
    - Recovery is managed in a browser or in the VMware vSphere Web Client or Client console.
 
 ## Design Scope
-{: #designscope}
+{: #design-scope}
 
-Note the following considerationswhen reviewing the pattern:
+Note the following considerations when reviewing the pattern:
 
 - Network connectivity from on-premises to the {{site.data.keyword.cloud_notm}} environments is considered as out of scope for this pattern.
 - Operation of your VMs is not impacted by Zerto. Zerto captures change data while it is still in the memory of the ESX host on its way to a datastore, except during the initial sync or a delta sync.
@@ -79,7 +79,7 @@ Note the following considerationswhen reviewing the pattern:
    - [Zerto_Scale_and_Benchmarking_Guidelines](https://help.zerto.com/bundle/Scale.Bench.Guide.HTML/page/Zerto_Scale_and_Benchmarking_Guide_R.htm).
 
 ## IBM Architecture Framework
-{: #architecture}
+{: #reference-architecture-framework}
 
 Following the IBM Architecture Framework, the VMware VCF in {{site.data.keyword.vpc_short}} disaster recovery solution that uses Zerto covers design considerations and architecture decisions for the following aspects and domains:
 
@@ -95,7 +95,7 @@ Following the IBM Architecture Framework, the VMware VCF in {{site.data.keyword.
 The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more information, see [Architecture framework](https://test.cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)
 
 ### Requirements
-{: #requirements}
+{: #reference-architecture-requirements}
 
 | **Aspect**                                                                                                                                                             | **Requirement**                                                                                                                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
