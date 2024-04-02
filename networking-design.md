@@ -13,7 +13,7 @@ keywords:
 {: #network-design}
 
 ## Requirements
-{: #requirements}
+{: #netorking-requirements}
 
 Requirements for the network aspect for the Zerto for disaster recovery for VMware workloads pattern focus on:
 
@@ -37,7 +37,7 @@ Consider the folloiwng when you design or deploy this architecture pattern:
 - Transit Gateway traffic cost implications.
 
 ## Considerations
-{: #considerations}
+{: #network-considerations}
 
 Key areas that you must keep in mind while designing a Zerto replication for Disaster recovery environment on {{site.data.keyword.cloud_notm}}.
 
