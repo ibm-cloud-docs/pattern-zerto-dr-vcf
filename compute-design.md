@@ -23,11 +23,11 @@ The requirements for the compute aspect for the Zerto for disaster recovery for 
 ### Architecture components
 {: #architecture-components}
 
-- **ZVM:**
+- ZVM:
    - A Linux based virtual appliance, one per site.
    - ZVM uses a local embedded SQL Server by default. It's recommended to use an external Microsoft SQL Server for medium and larger sized environments, for example, \>250 incoming VPGs, to prevent performance degradation. For more information, see [Database requirements](https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm).
    - For sizing information, see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
-- **VRA:**
+- VRA:
    - A Linux based virtual machine that is installed on every hypervisor hosting virtual machine that requires protecting in the protected site and every hypervisor hosting replicated virtual machine in the recovery site.
    - Install a VRA on every hypervisor host so that if protected, virtual machines are moved from one host to another host in the cluster to ensure that there is a VRA to protect the moved virtual machines.
    - A VRA compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
@@ -39,8 +39,8 @@ The requirements for the compute aspect for the Zerto for disaster recovery for 
 
 Two deployment options for VMware Cloud Foundation on {{site.data.keyword.vpc_short}} are available. These deployment options determine where the Zerto components need to be deployed.
 
-* **Standard architecture:** Separate VMware VCF management and workload domains.
-* **Consolidated architecture:** A consolidated domain where both the VCF management and workload domains reside.
+* Standard architecture: Separate VMware VCF management and workload domains.
+* Consolidated architecture: A consolidated domain where both the VCF management and workload domains reside.
 
 ### Standard architecture deployment on VCF
 {: #vcfdeployment}
