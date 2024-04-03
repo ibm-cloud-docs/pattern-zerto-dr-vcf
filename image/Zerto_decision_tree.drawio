@@ -1,13 +1,13 @@
-<mxfile host="Electron" modified="2024-02-27T11:55:59.753Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="LtaMmpzOwIzT3s96Qi3r" version="23.0.2" type="device" pages="5">
+<mxfile host="Electron" modified="2024-04-03T10:45:08.151Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="y0kR3G9tLnj9UOHOp6z8" version="24.1.0" type="device" pages="5">
   <diagram name="Zerto Deployment" id="eG0sn8VjS_qzeNetGSqx">
-    <mxGraphModel dx="2060" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2060" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="YUkJ70VLG-JB5ZvIF8RC-0" />
         <mxCell id="YUkJ70VLG-JB5ZvIF8RC-1" parent="YUkJ70VLG-JB5ZvIF8RC-0" />
         <mxCell id="YUkJ70VLG-JB5ZvIF8RC-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="YUkJ70VLG-JB5ZvIF8RC-1" source="YUkJ70VLG-JB5ZvIF8RC-3" target="YUkJ70VLG-JB5ZvIF8RC-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YUkJ70VLG-JB5ZvIF8RC-3" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Need&lt;/b&gt;&lt;/div&gt;disaster recovery capability for VMware workloads across IBM Cloud regions" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="YUkJ70VLG-JB5ZvIF8RC-1" vertex="1">
+        <mxCell id="YUkJ70VLG-JB5ZvIF8RC-3" value="&lt;div style=&quot;&quot;&gt;Do you require&amp;nbsp;&lt;/div&gt;disaster recovery capability for VMware workloads across IBM Cloud regions" style="rounded=1;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="YUkJ70VLG-JB5ZvIF8RC-1" vertex="1">
           <mxGeometry x="267.5" y="60" width="135" height="90" as="geometry" />
         </mxCell>
         <mxCell id="YUkJ70VLG-JB5ZvIF8RC-4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="YUkJ70VLG-JB5ZvIF8RC-1" source="YUkJ70VLG-JB5ZvIF8RC-5" target="YUkJ70VLG-JB5ZvIF8RC-7" edge="1">
@@ -17,7 +17,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="YUkJ70VLG-JB5ZvIF8RC-5" value="&lt;span style=&quot;font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;vSphere &lt;br&gt;encryption &lt;br&gt;compatibility &lt;br&gt;needed&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=default;labelBackgroundColor=none;" parent="YUkJ70VLG-JB5ZvIF8RC-1" vertex="1">
+        <mxCell id="YUkJ70VLG-JB5ZvIF8RC-5" value="&lt;span style=&quot;font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Do you require&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;vSphere &lt;br&gt;encryption &lt;br&gt;compatibility&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=default;labelBackgroundColor=none;" parent="YUkJ70VLG-JB5ZvIF8RC-1" vertex="1">
           <mxGeometry x="270" y="190" width="130" height="120" as="geometry" />
         </mxCell>
         <mxCell id="YUkJ70VLG-JB5ZvIF8RC-6" value="Zerto" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="YUkJ70VLG-JB5ZvIF8RC-1" vertex="1">
@@ -72,7 +72,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Veeam v Zerto Basic" id="8VpzCM-rjkBzjYrRP2az">
-    <mxGraphModel dx="1125" dy="541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2060" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="l0xpet3knr_XbYYzvZTt-0" />
         <mxCell id="l0xpet3knr_XbYYzvZTt-1" parent="l0xpet3knr_XbYYzvZTt-0" />
@@ -109,14 +109,14 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Zerto" id="vzhwwD8AwHDnNuQvaVza">
-    <mxGraphModel dx="2060" dy="1129" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2060" dy="1131" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="uOQ39EAIutqdIeEjohP7-0" />
         <mxCell id="uOQ39EAIutqdIeEjohP7-1" parent="uOQ39EAIutqdIeEjohP7-0" />
         <mxCell id="uOQ39EAIutqdIeEjohP7-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="uOQ39EAIutqdIeEjohP7-1" source="uOQ39EAIutqdIeEjohP7-3" target="uOQ39EAIutqdIeEjohP7-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uOQ39EAIutqdIeEjohP7-3" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Need&lt;/b&gt;&lt;/div&gt;Disaster recovery capability for VMware workloads across IBM Cloud regions" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="uOQ39EAIutqdIeEjohP7-1" vertex="1">
+        <mxCell id="uOQ39EAIutqdIeEjohP7-3" value="&lt;div style=&quot;text-align: center;&quot;&gt;Do you require&amp;nbsp;&lt;/div&gt;&lt;span style=&quot;&quot;&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;disaster recovery capability for VMware workloads across IBM Cloud regions&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;div style=&quot;text-align: center;&quot;&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="uOQ39EAIutqdIeEjohP7-1" vertex="1">
           <mxGeometry x="267.5" y="60" width="135" height="90" as="geometry" />
         </mxCell>
         <mxCell id="uOQ39EAIutqdIeEjohP7-4" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="uOQ39EAIutqdIeEjohP7-1" source="uOQ39EAIutqdIeEjohP7-5" target="uOQ39EAIutqdIeEjohP7-7" edge="1">
