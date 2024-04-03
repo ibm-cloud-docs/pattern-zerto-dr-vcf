@@ -61,7 +61,7 @@ In the following reference architecture, a consolidated VCF deployment in two re
     - Recovery is managed in a browser or in the VMware vSphere web client or client console.
 
 ## Design Scope
-{: #design-scope}
+{: #design-scope-id}
 
 Consider the following considerations when you review the pattern:
 
@@ -110,4 +110,4 @@ The Architecture Framework offers a consistent approach to designing cloud solut
 |                                                                                                                                                                                   | Internet                                            | Internet access to connect to Zerto CallHome Server, Zerto Analytics and Zerto support.                                                                                                                                                                                                     |
 | **Resiliency**                                                                                                                                                              | Zerto                                               | VMware virtual machines - Zerto provides the resiliency  Zerto data-plane components resiliency accomplished by deploying multiple VRAs. ZVM resiliency provided vSphere HA and database backups.   |
 | **Service Management**                                                                                                                                                      | **Optional** - Zerto Analytics, Cloud Control | Zerto Analytics and Cloud Control provide visibility into Zerto-protected workloads and provide monitoring, reporting, alerting, diagnostics with automated resolutions and infrastructure utilization, and capacity planning.                                                                |
-| {: caption="Table 2. Zerto Disaster Recovery solution components for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Cloud Foundations on VPC" caption-side="bottom"} |                                                     |                                                                                                                                                                                                                                                                                              |
+{: caption="Table 2. Zerto Disaster Recovery solution components for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Cloud Foundations on VPC" caption-side="bottom"}

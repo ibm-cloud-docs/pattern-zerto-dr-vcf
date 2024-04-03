@@ -10,7 +10,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Resiliency design
-{: #resiliency-design}
+{: #resiliency-design-id}
 
 ## Requirements
 {: #resiliency-requirements}

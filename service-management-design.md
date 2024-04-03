@@ -70,7 +70,7 @@ Review the key considerations for service management.
 - Monitor user activities within the Zerto environment, such as changes to policies, to ensure security and compliance. For more information, see [Monitoring Tasks](https://help.zerto.com/bundle/Admin.Azure.HTML.90/page/Monitoring_Tasks.htm){: external}.
 
 ### Automation
-{: #automation}
+{: #automation-considerations}
 
 - The automated deployment of VMware Cloud Foundation on {{site.data.keyword.vpc_short}} does not include any Zerto components. You need to manually install and configure the required Zerto components.
 

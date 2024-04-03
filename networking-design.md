@@ -10,10 +10,10 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Network design
-{: #network-design}
+{: #networking-design}
 
 ## Requirements
-{: #netorking-requirements}
+{: #networking-requirements}
 
 Requirements for the network aspect for the Zerto for disaster recovery for VMware workloads pattern focus on:
 
@@ -31,7 +31,7 @@ Consider the following when you design or deploy this architecture pattern:
 - Design your network flows carefully. For more information about ports and protocols, see [Zerto network ports and protocols](https://help.zerto.com/bundle/Admin.VC.HTML.90/page/Port_Usage.htm){: external}.
 - Ensure that the {{site.data.keyword.vpc_short}} security groups and firewall rules allow the replication and control traffic.
 - Ensure that the networks are properly routed and possible firewall rules allow the required traffic at both source and destination sites.
-- Performance implications: amount of initial data that is initialized or synchronized in a VPG and rate of change of data/RPO - sizes of changed data and data change rate.
+- Performance implications: amount of initial data that is initialized or synchronized in a VPG and rate of change of data/RPO (changed data size and rate of change).
 - Transit Gateway traffic cost implications, see [Transit Gateway pricing]( https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-faqs-for-transit-gateway#transit-gateway-pricing)
 
 ## Considerations
