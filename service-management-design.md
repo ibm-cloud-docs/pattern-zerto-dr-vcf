@@ -48,7 +48,7 @@ Review the key considerations for service management.
 
 {: #logintegration}
 
-- Integrate Zerto with centralized logging systems or syslog servers to consolidate and analyze logs across the environment. For more information, see [syslog](https://help.zerto.com/kb/000003918){: external}.
+- Integrate Zerto with centralized logging systems or syslog servers to consolidate and analyze logs across the environment. For more information, see [syslog](https://help.zerto.com/kb/000003918) {: external}.
 - Monitor Windows event logs for events related to Zerto and address any issues promptly. This is performed by using {{site.data.keyword.loganalysislong_notm}}.
 - All alerts that are issued by Zerto are displayed in the Zerto User Interface. For more information, see [Zerto alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alerts.htm){: external}.
 - Zerto Analytics provides comprehensive monitoring and health tracking for your protected environment. Using Zerto analytics, you can see aggregated information from the Zerto Virtual Managers and view the status of your environment. All your alerts, tasks, events, and information on Virtual Protection Groups (VPGs) can be viewed together. Zerto analytics is developed with an API first approach. Everything that is presented in the GUI is also available with APIs. The APIs are delivered with Swagger open source that help you develop, test REST integration that uses standardized examples, and easily populate custom portals with Zerto analytics content. For more information, see [Zerto Analytics](https://help.zerto.com/bundle/Zerto.Analytics.HTML/page/Zerto_Analytics_-_Overview_and_Use.htm){: external}.
