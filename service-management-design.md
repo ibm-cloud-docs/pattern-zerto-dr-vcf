@@ -76,4 +76,4 @@ Review the key considerations for service management.
 {: important}
 
 - Manage the protection and replication of virtual machines between the protected and recovery sites, by using the Zerto User Interface.
-- Zerto also provides a set of RESTful APIs and PowerShell cmdlets ([Zerto powershell command module](https://help.zerto.com/bundle/Powershell.CMDlets.HTML.90/page/Introduction.htm){: external}) to enable incorporating some of the disaster recovery functions within scripts or programs. For more information, see [Zerto Cloud Manager Restful APIs](https://help.zerto.com/bundle/API.ZCM.HTML.10.0_U3/page/Introduction_to_the_ZCM_RESTful_APIs.htm){: external}.
+- Zerto also provides a set of RESTful APIs and PowerShell cmdlets ([Zerto powershell command module](https://help.zerto.com/bundle/Powershell.CMDlets.HTML.90/page/Introduction.htm){: external}) to enable incorporating some of the disaster recovery functions within scripts or programs. For more information, see [Zerto Cloud Manager Restful APIs](https://help.zerto.com/bundle/API.ZCM.HTML.10.0_U3/page/Introduction_to_the_ZCM_RESTful_APIs.htm).
