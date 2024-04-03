@@ -10,11 +10,9 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Resiliency design
-
 {: #resiliency-design}
 
 ## Requirements
-
 {: #resiliency-requirements}
 
 The following are requirements for the resiliency aspect of the Zerto for disaster recovery for VMware workloads pattern:
@@ -25,20 +23,18 @@ The following are requirements for the resiliency aspect of the Zerto for disast
 ![Zerto_solution_for_vSphere_architecture](image/Zerto-Architecture-High-Level.svg){: caption="Figure 1. Zerto solution for vSphere architecture" caption-side="bottom"}
 
 ## Considerations
-
 {: #resiliency-considerations}
 
 - Zerto replication is software-based and occurs in the hypervisor layer.
 - The VRA continuously replicates data from VMs and VMDKs selected by the user, compressing it and sending it to the remote site over the {{site.data.keyword.cloud_notm}} backbone.
 - Every disk write operation to a protected virtual machine is copied by using Zerto Virtual Replication. The write is processed normally on the protected site and asynchronously replicated to the recovery site by a VRA journal. Each protected virtual machine has its own journal.
 - Replication is near-synchronous.
-- Zerto replicates all VMs belonging to an application, which is defined in Virtual Protection Groups, VPGs, at the same consistent checkpoint, regardless of the number of disks or VMs.
+- Zerto replicates all VMs belonging to an application, which is defined in Virtual Protection Groups (VPGs), at the same consistent checkpoint, regardless of the number of disks or VMs.
 
 ### Recovery Scenarios
-
 {: #recovery scenarios}
 
-The following scenarios are general guidance only. Each customer's workload and scenario are unique.
+The following scenarios are general guidance only. Customer workloads and scenarios are unique.
 
 **Scenario 1** : A limited number of VMs become unavailable/corrupted in the production site
 

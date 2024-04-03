@@ -10,10 +10,9 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # Overview
-
 {: #overview}
 
-The Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads pattern parovides a solution design where both the protected and recovery sites are hosted in {{site.data.keyword.vpc_full}}.
+The Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads pattern provides a solution design where both the protected and recovery sites are hosted in {{site.data.keyword.vpc_full}}.
 
 While the provisioning of the VCF in {{site.data.keyword.vpc_short}} is automated, the installation and configuration of Zerto is a manual process, [please follow the link for installation](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm){: external} on {{site.data.keyword.cloud_notm}}.
 {: note}

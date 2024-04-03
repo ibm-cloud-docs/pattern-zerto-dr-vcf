@@ -25,7 +25,7 @@ The following requirements are for the storage aspect for the Zerto for disaster
 
 Zerto uses a journal to track the changes that are occurring on the protected VMs. The Zerto journal is where replication data is stored during ongoing replication between sites. Journaling enables recovery points if there is a failure or rollback to previous points in time. Zerto recommends:
 
-- Journal storage should be accessible by all the recovery hosts and not just by one of the hosts.
+- Journal storage should be accessible by all the recovery hosts, not just by one of the hosts.
 - The sizing of the journal depends on the amount of data that is replicated, the replication update frequency, and retention period.
 - Zerto recommends setting aside 10-20% of the total data replication size for journal storage. For example, if replicating 1 TB of VM data, provision 100-200 GB for the journal.
 - The journal storage needs fast input/output operations per second (IOPS) performance since it is actively written to during replication. Solid-state drives (SSDs) are recommended for best performance.
@@ -52,4 +52,4 @@ For more information, see [Journal Overview_ Sizing and Best Practice](https://h
 {: #storage-considerations}
 
 - The ZVMs and VRAs are deployed in the VCF environment, they use storage from the provisioned data store, which in the case of VCF is vSAN based.
-- For replication, an important consideration, especially given that vSAN is used for the VMware VCF on {{site.data.keyword.cloud_notm}} data stores, is to properly size the recovery site VMware deployment data stores to accommodate the replicas. Scaling a vSAN cluster involves adding more bare metal ESXis to the cluster.
+- Properly size the recovery site VMware deployment data stores to accommodate the replicas. Scaling a vSAN cluster involves adding more bare metal ESXis to the cluster.
