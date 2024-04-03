@@ -25,3 +25,6 @@ Check to ensure that the minimum distance between the protected and recovery sit
 The following decision tree illustrates the selection criteria for selecting Zerto as the disaster recover product. This pattern does not cover backup design and deployment.
 
 ![Disaster_recovery_for_VMware workloads_on_ibm_cloud_decision_tree](image/Zerto-tree.svg){: caption="Figure 1. Disaster recovery decision tree for {{site.data.keyword.vmwaresolutions_full_notm}}" caption-side="bottom"}
+
+
+Follow the above decision tree while selecting a Disaster recovery solution offering for IBM Cloud VMware solutions.
