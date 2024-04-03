@@ -25,14 +25,14 @@ The requirements for the compute aspect for the Zerto for disaster recovery for 
 
 - ZVM:
    - A Linux based virtual appliance, one per site.
-   - ZVM uses a local embedded SQL Server by default. It's recommended to use an external Microsoft SQL Server for medium and larger sized environments, for example, \>250 incoming VPGs, to prevent performance degradation. For more information, see [Database requirements](https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm).
-   - For sizing information, see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm)
+   - ZVM uses a local embedded SQL Server by default. It's recommended to use an external Microsoft SQL Server for medium and larger sized environments, for example, \>250 incoming VPGs, to prevent performance degradation. For more information, see [Database requirements](https://help.zerto.com/bundle/Install.VC.HTML/page/Database_Requirements.htm){: external}.
+   - For sizing information, see [ZVM Appliance Requirements, Supported Features &amp; Configurations](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm){: external}.
 - VRA:
    - A Linux based virtual machine that is installed on every hypervisor hosting virtual machine that requires protecting in the protected site and every hypervisor hosting replicated virtual machine in the recovery site.
    - Install a VRA on every hypervisor host so that if protected, virtual machines are moved from one host to another host in the cluster to ensure that there is a VRA to protect the moved virtual machines.
    - A VRA compresses the data that is passed across the network from the protected site to the recovery site. The VRA automatically adjusts the compression level according to CPU usage, including totally disabling it if needed.
    - A VRA can manage a maximum of 1500 volumes, whether these volumes are being protected or recovered.
-   - For sizing information, see [Requirements for Virtual Replication Appliances](https://help.zerto.com/bundle/Prereq.VC.HTML.90/page/Requirements_for_Virtual_Replication_Appliances.htm).
+   - For sizing information, see [Requirements for Virtual Replication Appliances](https://help.zerto.com/bundle/Prereq.VC.HTML.90/page/Requirements_for_Virtual_Replication_Appliances.htm){: external}.
 
 ## Deployment options
 {: #deployment-options}
