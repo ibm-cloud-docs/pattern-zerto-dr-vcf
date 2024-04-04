@@ -10,8 +10,7 @@ keywords:
 {{site.data.keyword.attribute-definition-list}}
 
 # References
-
-{: #references}
+{: #references-id}
 
 Review the following references to guide you through the Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads pattern. These resources will assist you in understanding Zerto's capabilities and best practices for implementing disaster recovery solutions within a VMware Cloud Foundation environment.
 
