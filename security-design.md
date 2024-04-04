@@ -1,0 +1,33 @@
+---
+copyright:
+  years: 2024
+lastupdated: "2024-03-14"
+
+subcollection: pattern-zerto-dr-vcf
+
+keywords:
+---
+{{site.data.keyword.attribute-definition-list}}
+
+# Security design
+{: #security-design}
+
+## Requirements
+{: #security-requirements}
+
+The following are requirements for the security aspect for the Zerto for disaster recovery for VMware workloads pattern:
+
+- Provide encryption or privacy for the replication between the {{site.data.keyword.cloud_notm}} regions.
+
+## Considerations
+{: #security-considerations}
+
+| Security areas                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Network security           | **Isolation:** Ensure proper network isolation for the Zerto infrastructure components from unauthorized access.  **Firewall rules:** Implement strict firewall rules to control traffic between Zerto components and other systems within the {{site.data.keyword.cloud_notm}} environment.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Access control            | **Role-based access control (RBAC):** Implement RBAC to restrict access to Zerto components based on job responsibilities, ensuring that only authorized personnel can configure and manage. For more information, see [Permissions by Zerto Cloud Manager](https://help.zerto.com/bundle/Security.Hardening.HTML/page/Permissions_via_Zerto_Cloud_Manager.htm){: external}. **Authentication:** Enforce strong authentication mechanisms, such as multi-factor authentication (MFA), for accessing the Zerto management console and associated interfaces.                                                                                                                                                                                                         |
+| Data encryption            | **In-transit encryption:** Enable encryption for data in transit between Zerto components and VMware infrastructure to prevent interception and tampering. Use secure communication protocols like TLS. For more information, see [Network Encryption](https://help.zerto.com/bundle/Security.Hardening.HTML/page/Network_Encryption.htm){: external}. and [VRA to VRA Encryption](https://help.zerto.com/bundle/Security.Hardening.HTML/page/Virtual_Replication_Appliance.htm#vra_to_vra_encryption){: external}. **At-rest encryption:** Zerto does not support VM encryption. For more information, see [vSphere Features](https://help.zerto.com/bundle/Operability.Matrix.HTML/page/VMware_vSphere.htm){: external}. File encryption on a VM with applications such as BitLocker for non-boot disks is supported by Zerto. |
+| Vulnerability management   | **Regular updates:** Keep Zerto software and underlying systems up to date with the latest security patches and updates to address potential vulnerabilities. **Scanning and testing:** Regularly perform vulnerability assessments and penetration testing on the Zerto infrastructure to identify and remediate security weaknesses.                                                                                                                                                                                                                                                                                                                                                                                      |
+| Compliance                 | **Regulatory compliance:** Ensure that the Zerto deployment within the {{site.data.keyword.cloud_notm}} adheres to relevant industry regulations and compliance standards, such as GDPR, HIPAA, or any other applicable requirements.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Data residency and privacy | **Data residency policies:** Understand and comply with data residency requirements by configuring Zerto to align with {{site.data.keyword.cloud_notm}} data residency policies. **Privacy considerations:** Address privacy concerns by implementing anonymization or pseudonymization of sensitive data within backups.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+{: caption="Table 1. Security design considerations" caption-side="bottom"}
