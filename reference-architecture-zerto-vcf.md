@@ -82,9 +82,9 @@ Following the IBM Architecture Framework, the Zerto deployment for disaster reco
 - Resiliency: High Availability, Disaster Recovery
 - Service Management: Monitoring, Logging, Auditing, Alerting, Event Management
 
-![img](image/heat-map-Zerto.svg){: caption="Figure 2. Architecture framework for Zerto deployment on VMware on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
+![img](image/heat-map-Zerto.svg){: caption="Figure 2. {{site.data.keyword.arch_framework}}  for Zerto deployment on VMware on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
 
-The Architecture Framework offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more information, see [Architecture framework](https://test.cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)
+The {{site.data.keyword.arch_framework}}  offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more information, see [{{site.data.keyword.arch_framework}} ](https://test.cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro)
 
 ### Requirements
 {: #reference-architecture-requirements}
