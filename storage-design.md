@@ -46,7 +46,7 @@ For example, if you are replicating 100 GB of data that changes at a rate of 10 
 
 So, you would need at least 264 GB of free storage space on the target site to accommodate the Zerto journal for this replication scenario.
 
-For more information, see [Journal Overview_ Sizing and Best Practice](https://help.zerto.com/bundle/BP.Journal.Sizing.HTML/page Journal_Overview_Sizing_and_Best_Practice.htm){: external}.
+For more information, see [Journal Overview Sizing and Best Practice](https://help.zerto.com/bundle/BP.Journal.Sizing.HTML/page/Journal_Overview_Sizing_and_Best_Practice.htm){: external}
 
 ## Considerations
 {: #storage-considerations}
