@@ -53,19 +53,19 @@ toc:
           - topic: security-architecture.md
             navtitle: Security
           - topic: resiliency-architecture.md
-            navtitle: Resiliency         
+            navtitle: Resiliency
           - topic: service-management-architecture.md
-            navtitle: Service Management 
-  - navgroup:
-      id: deploy
-      topics:
-      - topic-7.md
-      - topic-8.md
+            navtitle: Service Management
+  #- navgroup:
+  #    id: deploy
+  #    topics:
+  #    - topic-7.md
+  #    - topic-8.md
   - navgroup:
       id: reference
       topics:
       - references.md
-  - navgroup:
-      id: help
-      topics:
-      - topic: topic-10.md
+  #- navgroup:
+  #    id: help
+  #    topics:
+  #    - topic: topic-10.md
