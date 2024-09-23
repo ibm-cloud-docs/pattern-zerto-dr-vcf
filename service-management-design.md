@@ -33,12 +33,12 @@ Review the key considerations for service management.
 - Monitor the underlying infrastructure components, including virtualization hosts, storage, and network devices, to identify potential bottlenecks. Consider the use of the {{site.data.keyword.cloud_notm}} console. For more information see [{{site.data.keyword.monitoringlong_notm}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-monitoring-iaas) or  [Monitoring for VMware vCenter Server deployments](/docs/monitoring?topic=monitoring-vmware-vcenter).
 - Use performance monitoring tools specific to your virtualization platform to track resource utilization. Review Zerto analytics for performance monitoring, or consider VMware Aria operations and logs on {{site.data.keyword.IBM_notm}}. For more information, see  [VMware Aria Operations and VMware Aria Operations for Logs on {{site.data.keyword.cloud_notm}} overview](/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview).
 
-### Log Analysis:
-{: #loganalysis}
+### IBM Cloud Logs:
+{: #cloudlog}
 
 - Regularly review Zerto log files for any warning or error messages. Logs can provide detailed information about the health and performance of various components. For more information, see [Collecting Zerto logs](https://help.zerto.com/bundle/Admin.VC.HTML.95/page/Collecting_Zerto_Logs.htm){: external}.
 - Configure log retention and archiving to ensure that historical logs are available for troubleshooting and analysis.
-- Consider the use of {{site.data.keyword.loganalysislong_notm}}. For more information, see [Getting started with {{site.data.keyword.loganalysislong_notm}}](/docs/log-analysis?topic=log-analysis-getting-started) and [Logging for VMware vCenter Server deployments](/docs/log-analysis?topic=log-analysis-vmware-vcenter).
+- Consider the use of IBM Cloud Logs. For more information, see [Getting started with IBM Cloud Logs](/docs/cloud-logs) and [Logging for VMware vCenter Server deployments](/docs/log-analysis?topic=log-analysis-vmware-vcenter).
 - Consider the optional add-on service [VMware Aria Operations and VMware Aria Operations for Logs on {{site.data.keyword.cloud_notm}} overview](/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview).
 
 ### Event Logs and Syslog Integration:
