@@ -47,7 +47,7 @@ Two deployment options for VMware Cloud Foundation on {{site.data.keyword.vpc_sh
 
 The following diagram introduces the high-level steps to deploy Zerto on a VMware Cloud Foundation standard architecture. In this architecture pattern, the Zerto ZVM appliance is deployed into the management domain as virtual machines (VMs) and Zerto VRAs are deployed in the VI workload domain.
 
-![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg){: caption="Figure 1. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} standard architecture" caption-side="bottom"}
+![Zerto_VCF_IBM_Cloud_Standard_Architecture](image/Zerto-Architecture-Standard.svg){: caption="Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} standard architecture" caption-side="bottom"}
 
 Review the following steps to understand the standard architecture pattern deployment:
 
@@ -61,7 +61,7 @@ Review the following steps to understand the standard architecture pattern deplo
 
 The following diagram introduces the high-level steps to deploy Zerto on a VMware Cloud Foundation consolidated architecture. In this architecture pattern, Zerto appliances are deployed into the management domain as virtual machines (VMs).
 
-![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg){: caption="Figure 2. Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} consolidated architecture" caption-side="bottom"}
+![Zerto_VCF_IBM_Cloud_Consolidated_Architecture](image/Zerto-Architecture-Consolidated.svg){: caption="Zerto Disaster Recovery solution for VMware Workloads on {{site.data.keyword.vpc_short}} consolidated architecture" caption-side="bottom"}
 
 Review the following steps to understand the consolidated architecture pattern deployment:
 

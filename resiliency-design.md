@@ -20,7 +20,7 @@ The following are requirements for the resiliency aspect of the Zerto for disast
 - Replicate VMware workloads from a protected site to a recovery site in a different region to enable the failover of workloads if there is a failure in the protected site.
 - Failover that meets the required Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) of the application.
 
-![Zerto_solution_for_vSphere_architecture](image/Zerto-Architecture-High-Level.svg){: caption="Figure 1. Zerto solution for vSphere architecture" caption-side="bottom"}
+![Zerto_solution_for_vSphere_architecture](image/Zerto-Architecture-High-Level.svg){: caption="Zerto solution for vSphere architecture" caption-side="bottom"}
 
 ## Considerations
 {: #resiliency-considerations}

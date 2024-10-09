@@ -33,7 +33,7 @@ The following diagram describes the high-level steps to deploy Zerto on a VMware
 3. Create the required number of bare metal server VLAN interfaces with reserved IP addresses by using consecutive IP range into management subnet for Zerto VRAs ( Virtual Replication appliances ). Attach to equivalent management security groups in Virtual Private Cloud (VPC).
 4. Configure Zerto Virtual Manager with the IP address range and use the ZVM ( Zerto Virtual Manager ) workflow to deploy the VRAs.
 
-![img](image/Zerto-Architecture-Disaster-recovery.svg){: caption="Figure 1. Zerto Disaster Recovery for VMWare Solution Components" caption-side="bottom"}
+![img](image/Zerto-Architecture-Disaster-recovery.svg){: caption="Zerto Disaster Recovery for VMWare Solution Components" caption-side="bottom"}
 
 In the following reference architecture, a consolidated VCF deployment in two regions is assumed. Review the key features of this pattern:
 
@@ -82,7 +82,7 @@ Following the IBM Architecture Framework, the Zerto deployment for disaster reco
 - Resiliency: High Availability, Disaster Recovery
 - Service Management: Monitoring, Logging, Auditing, Alerting, Event Management
 
-![img](image/heat-map-Zerto.svg){: caption="Figure 2. {{site.data.keyword.arch_framework}}  for Zerto deployment on VMware on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
+![img](image/heat-map-Zerto.svg){: caption="{{site.data.keyword.arch_framework}}  for Zerto deployment on VMware on {{site.data.keyword.cloud_notm}}" caption-side="bottom"}
 
 The {{site.data.keyword.arch_framework}}  offers a consistent approach to designing cloud solutions by addressing requirements across various technology-agnostic architectural areas, called "aspects" and "domains." For more information, see [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro) for more details.
 
@@ -96,7 +96,7 @@ Storage                                                                         
 Resiliency                                                                                                                                                                   | Replicate VMware workloads from a protected site to a recovery site in a different region for failover of workloads if a protected site failure occurs. Failover that meets the required RTO/RPO of the application                                                                        |
 |
 Service Management                                                                                                                                                                   | Monitor the usage and performance of the Zerto components. Enable logging and alerting to DevOps tooling                                                                                  |
-{: caption="Table 1. Zerto Disaster Recovery solution requirements for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Foundation on VPC" caption-side="bottom"}|
+{: caption="Zerto Disaster Recovery solution requirements for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Foundation on VPC" caption-side="bottom"}|
 
 ### Components
 {: #components}
@@ -111,4 +111,4 @@ Service Management                                                              
 |                                                                                                                                                                                   | Internet                                            | Internet access to connect to Zerto CallHome Server, Zerto Analytics and Zerto support.                                                                                                                                        |
 | **Resiliency**                                                                                                                                                              | Zerto                                               | VMware virtual machines - Zerto provides the resiliency  Zerto data-plane components resiliency accomplished by deploying multiple VRAs. ZVM resiliency provided vSphere HA and database backups.                              |
 | **Service Management**                                                                                                                                                                | **Optional** - Zerto Analytics, Cloud Control | Zerto Analytics and Cloud Control provide visibility into Zerto-protected workloads and provide monitoring, reporting, alerting, diagnostics with automated resolutions and infrastructure utilization, and capacity planning.|
-{: caption="Table 2. Zerto Disaster Recovery solution components for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Cloud Foundations on VPC" caption-side="bottom"}
+{: caption="Zerto Disaster Recovery solution components for VMware Workloads on {{site.data.keyword.cloud_notm}} VMware Cloud Foundations on VPC" caption-side="bottom"}
