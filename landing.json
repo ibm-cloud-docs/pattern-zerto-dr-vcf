@@ -1,0 +1,45 @@
+{
+    "version": 2,
+    "title": "Deploy resiliency design with Zerto on VMware",
+    "introduction": "This pattern describes how to deploy Zerto for disaster recovery for VMware Cloud Foundation (VCF) workloads running on IBM CLoud VPC.",
+    "section_topics": {
+        "links": [
+        {
+          "title": "Solution overview",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-overview-id"
+        },
+        {
+          "title": "Compute",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-compute-design"
+        },
+        {
+          "title": "Storage",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-storage-design"
+        },
+        {
+          "title": "Networking",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-networking-design"
+        },
+        {
+          "title": "Security",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-security-design"
+        },
+        {
+          "title": "Resiliency",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-resiliency-design-id"
+        },
+        {
+          "title": "Service management",
+          "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-service"
+        }
+      ]
+    },
+    "section_architectures": [
+      {
+        "title": "Deploy resiliency design with Zerto on VMware",
+        "href": "/docs/pattern-zerto-dr-vcf?topic=pattern-zerto-dr-vcf-resiliency-zerto",
+        "deployable": false
+      }
+    ]
+  }
+  
