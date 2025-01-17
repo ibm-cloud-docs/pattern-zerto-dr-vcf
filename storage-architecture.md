@@ -12,8 +12,8 @@ keywords:
 # Architecture decisions for storage
 {: #storage-decisions}
 
-## Storage Architecture decision
-{: #storage architecture decision}
+## Storage Architecture decisions
+{: #storage-architecture-decisions}
 
 | Architecture decision                                                 | Requirement                       | Options | Decision | Rationale                                                              |
 | ------------------------------------------------------------------------------- | -------------------------------------------- | ----------------- | ------------------ | -------------------------------------------------------------------------------- |

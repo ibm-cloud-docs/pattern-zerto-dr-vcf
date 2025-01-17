@@ -30,7 +30,7 @@ Review the key considerations for service management.
 ### Infrastructure monitoring
 {: #infrastructuremonitoring}
 
-- Monitor the underlying infrastructure components, including virtualization hosts, storage, and network devices, to identify potential bottlenecks. Consider the use of the {{site.data.keyword.cloud_notm}} console. For more information see [{{site.data.keyword.monitoringlong_notm}}](/docs/cloud-infrastructure?topic=cloud-infrastructure-monitoring-iaas) or  [Monitoring for VMware vCenter Server deployments](/docs/monitoring?topic=monitoring-vmware-vcenter).
+- Monitor the underlying infrastructure components, including virtualization hosts, storage, and network devices, to identify potential bottlenecks. Consider the use of the {{site.data.keyword.cloud_notm}} console or [{{site.data.keyword.monitoringlong_notm}}. For more information see [{{site.data.keyword.monitoringlong_notm}}](/docs/monitoring?topic=monitoring-getting-started) or  [Monitoring for VMware vCenter Server deployments](/docs/monitoring?topic=monitoring-vmware-vcenter).
 - Use performance monitoring tools specific to your virtualization platform to track resource utilization. Review Zerto analytics for performance monitoring, or consider VMware Aria operations and logs on {{site.data.keyword.IBM_notm}}. For more information, see  [VMware Aria Operations and VMware Aria Operations for Logs on {{site.data.keyword.cloud_notm}} overview](/docs/vmwaresolutions?topic=vmwaresolutions-vrops_overview).
 
 ### IBM Cloud Logs:

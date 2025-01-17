@@ -32,7 +32,7 @@ The following are requirements for the resiliency aspect of the Zerto for disast
 - Zerto replicates all VMs belonging to an application, which is defined in Virtual Protection Groups (VPGs), at the same consistent checkpoint, regardless of the number of disks or VMs.
 
 ### Recovery Scenarios
-{: #recovery scenarios}
+{: #recovery-scenarios}
 
 The following scenarios are general guidance only. Customer workloads and scenarios are unique.
 
