@@ -12,11 +12,11 @@ keywords:
 # Architecture decisions for storage
 {: #storage-decisions}
 
-## Storage Architecture decision
-{: #storage architecture decision}
+## Storage Architecture decisions
+{: #storage-architecture-decisions}
 
 | Architecture decision                                                 | Requirement                       | Options | Decision | Rationale                                                              |
 | ------------------------------------------------------------------------------- | -------------------------------------------- | ----------------- | ------------------ | -------------------------------------------------------------------------------- |
 | ZVM Storage                                                                     | Provide storage for the Zerto ZVM component. | VMware vSAN       | VMware vSAN        | vSAN is the only storage that is supported for datastores in VMware VCF on {{site.data.keyword.vpc_short}} |
 | VRA storage                                                                     | Provide storage for the Zerto VRA component. | VMware vSAN       | VMware vSAN        | vSAN is the only storage that is supported for datastores in VMware VCF on {{site.data.keyword.vpc_short}} |
-{: caption="Table 1. Architecture decisions for storage" caption-side="bottom"}
+{: caption="Architecture decisions for storage" caption-side="bottom"}
