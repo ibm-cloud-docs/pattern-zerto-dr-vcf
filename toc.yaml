@@ -1,13 +1,7 @@
-#  Name your file `toc.yaml`
-#  Make sure you include all nav file coding requirements
-#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
----
 toc:
   properties:
     subcollection: pattern-zerto-dr-vcf
-    # industry: industry-value
     use-case: Public cloud
-   # compliance: compliance-value
     audience: solution
     content-type: deployment
     href: /docs/pattern-zerto-dr-vcf
@@ -56,16 +50,7 @@ toc:
             navtitle: Resiliency
           - topic: service-management-architecture.md
             navtitle: Service Management
-  #- navgroup:
-  #    id: deploy
-  #    topics:
-  #    - topic-7.md
-  #    - topic-8.md
   - navgroup:
       id: reference
       topics:
       - references.md
-  #- navgroup:
-  #    id: help
-  #    topics:
-  #    - topic: topic-10.md

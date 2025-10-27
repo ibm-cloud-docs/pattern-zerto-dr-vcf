@@ -38,7 +38,7 @@ The following scenarios are general guidance only. Customer workloads and scenar
 
 **Scenario 1** : A limited number of VMs become unavailable/corrupted in the production site
 
-- By using Zerto's re-IP features, recovery of individual applications or VMs is possible when used with DNS updates. For more information, see [How the Re-IP works in Zerto](https://help.zerto.com/kb/000002926){: external}.
+- By using Zerto's re-IP features, recovery of individual applications or VMs is possible when used with DNS updates. For more information, see [How the Re-IP works in Zerto](https://help.zerto.com/bundle/z-kb-articles-zertokbs/page/2926.html){: external}.
 - Depending on your network routing and subnet allocations, failover without re-IP is also possible.
 
 **Scenario 2** : The VMware environment in the protected site becomes unavailable

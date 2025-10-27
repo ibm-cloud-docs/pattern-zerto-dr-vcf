@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2024
-lastupdated: "2024-03-29"
+  years: 2024, 2025
+lastupdated: "2025-10-27"
 
 subcollection: pattern-zerto-dr-vcf
 
@@ -44,13 +44,13 @@ Review the key considerations for service management.
 ### Event Logs and Syslog Integration:
 {: #logintegration}
 
-- Integrate Zerto with centralized logging systems or syslog servers to consolidate and analyze logs across the environment. For more information, see [syslog](https://help.zerto.com/kb/000003918){: external}.
+- Integrate Zerto with centralized logging systems or syslog servers to consolidate and analyze logs across the environment. For more information, see [syslog](https://help.zerto.com/bundle/z-kb-articles-zertokbs/page/3918.html){: external}.
 - Monitor Windows event logs for events related to Zerto and address any issues promptly. This is performed by using {{site.data.keyword.logs_full_notm}}.
 - All alerts that are issued by Zerto are displayed in the Zerto User Interface. For more information, see [Zerto alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alerts.htm){: external}.
 - Zerto Analytics provides comprehensive monitoring and health tracking for your protected environment. Using Zerto analytics, you can see aggregated information from the Zerto Virtual Managers and view the status of your environment. All your alerts, tasks, events, and information on Virtual Protection Groups (VPGs) can be viewed together. Zerto analytics is developed with an API first approach. Everything that is presented in the GUI is also available with APIs. The APIs are delivered with Swagger open source that help you develop, test REST integration that uses standardized examples, and easily populate custom portals with Zerto analytics content. For more information, see [Zerto Analytics](https://help.zerto.com/bundle/Zerto.Analytics.HTML/page/Zerto_Analytics_-_Overview_and_Use.htm){: external}.
 - Zerto can issue alerts through the vCenter's alarms feature. The actions that are triggered by these alarms can be customized by the administrator. For more information about how to configure these actions, which include sending an email, a notification trap, or running a command from the vCenter server, see [VMware alerts](https://help.zerto.com/bundle/Alarms.Alerts.HTML/page/Zerto_Alarms_In_VMware_vSphere.htm){: external}.
 - By default, Zerto stores its logs locally on the host where it is installed. For more information, see [Understanding Logs](https://help.zerto.com/bundle/Admin.VC.HTML.97/page/Understanding_the_Logs.htm){: external}.
-- Email notifications or SNMP traps can also be used for alerting or job monitoring. For more information, see [Zerto email alerts](https://help.zerto.com/kb/000003529){: external}.
+- Email notifications or SNMP traps can also be used for alerting or job monitoring. For more information, see [Zerto email alerts](https://help.zerto.com/bundle/z-kb-articles-zertokbs/page/3529.html){: external}.
 
 ### Network Monitoring
 {: #networkmonitoring}

@@ -12,6 +12,9 @@ keywords:
 # Overview
 {: #overview-id}
 
+**End of Marketing**: As of 31 October 2025, new deployments of VMware Solutions offerings are no longer available for new customers. Existing customers can still use and expand their active VMware® workloads on {{site.data.keyword.cloud}}. For more information, see [End of Marketing for VMware on {{site.data.keyword.cloud_notm}}](/docs/vmwaresolutions?topic=vmwaresolutions-eos-vms).
+{: note}
+
 The Zerto deployment for disaster recovery for VMware Cloud Foundation (VCF) workloads pattern provides a solution design where both the protected and recovery sites are hosted in {{site.data.keyword.vpc_full}}.
 
 While the provisioning of the VCF in {{site.data.keyword.vpc_short}} is automated, the installation and configuration of Zerto is a manual process [ZVM configuration details](https://help.zerto.com/bundle/Linux.ZVM.HTML.10.0_U3/page/Book_in_Portal_-_Prerequisite_for_ZVM_Linux.htm){: external} on {{site.data.keyword.cloud_notm}}.
