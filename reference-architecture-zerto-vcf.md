@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2024
-lastupdated: "2024-03-29"
+  years: 2024, 2025
+lastupdated: "2025-10-27"
 
 subcollection: pattern-zerto-dr-vcf
 keywords:
@@ -17,7 +17,7 @@ authors:
 The Zerto for disaster recovery for VMware Cloud Foundations (VCF) workloads deploys a manual solution where both the protected and recovery sites are in {{site.data.keyword.vpc_short}}.  This pattern builds on Zerto best practice guidance. For more information, see [Zerto Best Practices](https://help.zerto.com/category/Best_Practices){: external}.
 
 - Disaster recovery is a shared responsibility of the client and supported by {{site.data.keyword.IBM}} or a Business Partner for build and Day 2 support services. If you do not use {{site.data.keyword.IBM_notm}} or a Business Partner for build and Day 2 support services, then you are responsible for disaster recovery.
-- If the workload to be protected must support data encryption, GPDR, and other regulatory compliance, see [Deploy {{site.data.keyword.cloud_notm}} Resiliency Design with Veeam on VMware](https://cloud.ibm.com/docs/vmware-cross-region-dr?topic=vmware-cross-region-dr-overview).
+- If the workload to be protected must support data encryption, GPDR, and other regulatory compliance, see [Deploy {{site.data.keyword.cloud_notm}} Resiliency Design with Veeam on VMware](/docs/vmware-cross-region-dr?topic=vmware-cross-region-dr-overview).
 - This pattern is cross-region. The recovery site is in a different {{site.data.keyword.cloud_notm}} region than the protected location. For example, let's say the protected site is Frankfurt and the recovery location is Madrid. However, if required, the pattern can use a recovery site in the same geographic region, but in a different availability zone such as Frankfurt AZ1 and Frankfurt AZ3.
 - Check to ensure that the minimum distance between the protected and recovery sites meets your requirement.
 
@@ -68,7 +68,7 @@ Consider the following considerations when you review the pattern:
 - Network connectivity from on-premises to the {{site.data.keyword.cloud_notm}} environments is considered as out of scope for this pattern.
 - Operation of your VMs is not impacted by Zerto. Zerto captures change data while it is still in the ESX host memory on its way to a data store (except during the initial sync or a delta sync)
 
-For more information, see [Technical_Specifications](https://cloud.ibm.com/docs/vmwaresolutions?topic=vmwaresolutions-addingzertodr){: external} and [Zerto Scale and Benchmarking Guidelines](https://help.zerto.com/bundle/Scale.Bench.Guide.HTML/page/Zerto_Scale_and_Benchmarking_Guide_R.htm){: external}.
+For more information, see [Technical_Specifications](/docs/vmwaresolutions?topic=vmwaresolutions-addingzertodr){: external} and [Zerto Scale and Benchmarking Guidelines](https://help.zerto.com/bundle/Scale.Bench.Guide.HTML/page/Zerto_Scale_and_Benchmarking_Guide_R.htm){: external}.
 
 ## IBM Architecture Framework
 {: #reference-architecture-framework}
